@@ -10,7 +10,7 @@
     "docs:extract": "cd ../aastar-sdk && bash scripts/extract-docs.sh"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0",
-    "vue": "^3.4.0"
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.26"
   }
 }
