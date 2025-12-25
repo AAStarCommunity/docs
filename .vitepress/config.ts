@@ -5,7 +5,7 @@ export default defineConfig({
   description: 'Build Your Own Protocol with Account Abstraction',
   
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/aastar-logo.png',
     
     nav: [
       { text: 'Guide', link: '/guide/getting-started' },

@@ -6,7 +6,7 @@ hero:
   text: Build Your Own Protocol
   tagline: Account Abstraction infrastructure with SuperPaymaster, EOA Rainbow Bridge, and Community Management
   image:
-    src: /logo.svg
+    src: /aastar-logo.png
     alt: AAStar SDK
   actions:
     - theme: brand
