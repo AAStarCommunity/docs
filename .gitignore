@@ -1,6 +1,8 @@
-# Dependencies
+# Dependencies (local dev only, not for Vercel)
 node_modules/
 pnpm-lock.yaml
+package.json
+package-lock.json
 
 # VitePress cache only (keep dist for deployment)
 .vitepress/cache/
