@@ -6,6 +6,18 @@ export default defineConfig({
   
   ignoreDeadLinks: true, // Ignore dead links from synced SDK docs
   
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en',
+    },
+    zh: {
+      label: '简体中文',
+      lang: 'zh-CN',
+      link: '/zh/'
+    }
+  },
+
   themeConfig: {
     logo: '/aastar-logo.png',
     
@@ -52,9 +64,29 @@ export default defineConfig({
         }
       ],
       
+      '/zh/guide/': [
+        {
+          text: '快速入门',
+          items: [
+            { text: '开始使用', link: '/zh/guide/getting-started' },
+            { text: '安裝', link: '/zh/guide/installation' },
+            { text: '快速開始', link: '/zh/guide/quick-start' }
+          ]
+        },
+        {
+          text: '核心概念',
+          items: [
+            { text: '賬戶抽象', link: '/zh/guide/concepts/account-abstraction' },
+            { text: 'SuperPaymaster (AOA+)', link: '/zh/guide/concepts/superpaymaster' },
+            { text: 'EOA Rainbow Bridge', link: '/zh/guide/concepts/rainbow-bridge' },
+            { text: '聲譽系統', link: '/zh/guide/concepts/reputation' }
+          ]
+        }
+      ],
+
       '/api/': [
         {
-          text: 'API by Role',
+          text: 'API Reference',
           items: [
             { text: 'Overview', link: '/api/' },
             { text: 'Operator API', link: '/api/roles/operator' },
@@ -72,14 +104,6 @@ export default defineConfig({
             { text: 'Tokens', link: '/api/modules/tokens' },
             { text: 'Identity', link: '/api/modules/identity' },
             { text: 'DApp', link: '/api/modules/dapp' }
-          ]
-        },
-        {
-          text: 'Reference',
-          items: [
-            { text: 'Types', link: '/api/types' },
-            { text: 'Errors', link: '/api/errors' },
-            { text: 'Constants', link: '/api/constants' }
           ]
         }
       ],

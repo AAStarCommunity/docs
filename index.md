@@ -42,6 +42,12 @@ features:
     details: Deploy on Ethereum, Optimism, and other EVM-compatible chains.
 ---
 
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="display:inline-block; margin-right: 10px;" />
+  <img src="https://img.shields.io/badge/TypeScript-5.0-blue" alt="TypeScript" style="display:inline-block; margin-right: 10px;" />
+  <img src="https://img.shields.io/badge/Status-0.14.0-green" alt="Status" style="display:inline-block;" />
+</p>
+
 <BigFeatures />
 
 ## Quick Example

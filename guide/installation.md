@@ -1,107 +1,40 @@
 # Installation
 
-## Package Manager
+The AAStar SDK is built with TypeScript and can be used in any Node.js or browser environment. We recommend using `pnpm` for package management.
 
-AAStar SDK is available as npm packages. We recommend using **pnpm** for the best experience.
+## Install the Main Package
 
-### Using pnpm (Recommended)
+The `@aastar/sdk` package provides the easiest entry point by grouping all core functionalities.
 
 ```bash
-pnpm add @aastar/sdk
+pnpm add @aastar/sdk viem@2.x
 ```
 
-### Using npm
+## Modular Installation (Optional)
+
+If you only need specific functionalities, you can install individual packages to keep your bundle size small:
 
 ```bash
-npm install @aastar/sdk
-```
-
-### Using yarn
-
-```bash
-yarn add @aastar/sdk
-```
-
-## Individual Packages
-
-You can also install individual packages based on your needs:
-
-```bash
-# Core utilities and client creation
+# Core utilities and types
 pnpm add @aastar/core
 
-# Account Abstraction utilities
+# Account Abstraction and 7702 support
 pnpm add @aastar/account
 
-# Paymaster utilities
+# Paymaster and sponsorship logic
 pnpm add @aastar/paymaster
 
-# Token utilities (GToken, xPNTs, SBT)
-pnpm add @aastar/tokens
-
-# Identity and reputation
-pnpm add @aastar/identity
-
-# React hooks for DApps
-pnpm add @aastar/dapp
+# Finance and GToken utilities
+pnpm add @aastar/finance
 ```
 
-## Peer Dependencies
+## Prerequisites
 
-The SDK requires the following peer dependencies:
-
-```bash
-pnpm add viem@^2.41.0
-```
-
-## TypeScript Configuration
-
-For the best TypeScript experience, add these settings to your `tsconfig.json`:
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
-  }
-}
-```
-
-## Environment Setup
-
-Create a `.env` file for your configuration:
-
-```bash
-# Network RPC URL
-RPC_URL=https://rpc.sepolia.org
-
-# Your private key (NEVER commit this!)
-PRIVATE_KEY=0x...
-
-# Contract addresses (optional, SDK provides defaults)
-REGISTRY_ADDRESS=0x...
-PAYMASTER_ADDRESS=0x...
-```
-
-## Verify Installation
-
-Test your installation:
-
-```typescript
-import { getNetwork, CONTRACTS } from '@aastar/core';
-
-const network = getNetwork('sepolia');
-console.log('Network:', network.name);
-console.log('Chain ID:', network.chainId);
-console.log('Registry:', CONTRACTS.sepolia.registry);
-```
+- **Node.js**: v18 or higher.
+- **TypeScript**: v5.0 or higher (recommended for type safety).
+- **Viem**: v2.43 or higher.
 
 ## Next Steps
 
-- [Quick Start Guide](/guide/quick-start)
-- [Core Concepts](/guide/concepts/account-abstraction)
-- [API Reference](/api/)
+- Choose your role and create a [Client](./quick-start).
+- Explore the [Core Concepts](../concepts/account-abstraction).

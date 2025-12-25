@@ -1,144 +1,52 @@
 # Quick Start
 
-Get up and running with AAStar SDK in 5 minutes.
+Get up and running with the AAStar SDK in less than 5 minutes.
 
-## Step 1: Install the SDK
+## 1. Environment Setup
 
-```bash
-pnpm add @aastar/sdk viem
-```
-
-## Step 2: Set Up Your Environment
-
-Create a `.env` file:
+Create a `.env` file with your private key and RPC provider:
 
 ```bash
-RPC_URL=https://rpc.sepolia.org
-PRIVATE_KEY=your_private_key_here
+PRIVATE_KEY_JASON=0x...
+SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/...
 ```
 
-## Step 3: Create Your First Client
+## 2. Basic Initialization
 
-Choose a client based on your role:
-
-### For End Users (DApp Developers)
+Initialize the SDK by choosing a role-based client. Most developers start with the `EndUserClient`.
 
 ```typescript
-import { createEndUserClient } from '@aastar/core';
+import { createEndUserClient } from '@aastar/sdk';
 import { http } from 'viem';
 import { sepolia } from 'viem/chains';
 import { privateKeyToAccount } from 'viem/accounts';
 
-const client = createEndUserClient({
+const account = privateKeyToAccount(process.env.PRIVATE_KEY_JASON);
+
+const user = createEndUserClient({
   chain: sepolia,
-  transport: http(process.env.RPC_URL),
-  account: privateKeyToAccount(process.env.PRIVATE_KEY),
+  transport: http(process.env.SEPOLIA_RPC_URL),
+  account
 });
-
-// Check credit limit
-const credit = await client.getCreditLimit();
-console.log('Available credit:', credit);
 ```
 
-### For Operators (Paymaster Providers)
+## 3. Execute a Gasless Transaction
+
+Enable your users to interact with your dapp without holding native gas tokens.
 
 ```typescript
-import { createOperatorClient, CONTRACTS } from '@aastar/core';
-import { parseEther } from 'viem';
-
-const operator = createOperatorClient({
-  chain: sepolia,
-  transport: http(process.env.RPC_URL),
-  account: privateKeyToAccount(process.env.OPERATOR_KEY),
+// Send a sponsored transaction via SuperPaymaster
+const hash = await user.sendGaslessTransaction({
+  to: '0x...',
+  data: '0x...',
+  communityAddress: '0x...', // Your registered community
 });
 
-// Stake GTokens
-await operator.stake({
-  amount: parseEther('100'),
-});
-
-// Deposit to Paymaster
-await operator.deposit({
-  amount: parseEther('10'),
-});
+console.log(`Transaction sent: ${hash}`);
 ```
 
-### For Communities (DAO Managers)
+## 4. Next Steps
 
-```typescript
-import { createCommunityClient } from '@aastar/core';
-
-const community = createCommunityClient({
-  chain: sepolia,
-  transport: http(process.env.RPC_URL),
-  account: privateKeyToAccount(process.env.COMMUNITY_KEY),
-});
-
-// Register community
-await community.registerCommunity({
-  name: 'MyAwesomeDAO',
-  metadata: 'ipfs://...',
-});
-
-// Mint SBT to member
-await community.mintSBT({
-  to: memberAddress,
-  tokenId: 1n,
-});
-```
-
-## Step 4: Run Your Code
-
-```bash
-tsx your-script.ts
-```
-
-## Common Patterns
-
-### Check Network Configuration
-
-```typescript
-import { getNetwork, CONTRACTS } from '@aastar/core';
-
-const network = getNetwork('sepolia');
-console.log('Chain ID:', network.chainId);
-console.log('RPC URL:', network.rpcUrl);
-console.log('Registry:', CONTRACTS.sepolia.registry);
-```
-
-### Handle Errors
-
-```typescript
-try {
-  await operator.stake({ amount: parseEther('100') });
-} catch (error) {
-  if (error.message.includes('insufficient balance')) {
-    console.error('Not enough GTokens');
-  } else {
-    console.error('Staking failed:', error);
-  }
-}
-```
-
-### Get Transaction URL
-
-```typescript
-import { getTxUrl } from '@aastar/core';
-
-const txHash = await operator.stake({ amount: parseEther('100') });
-const url = getTxUrl('sepolia', txHash);
-console.log('View transaction:', url);
-```
-
-## Next Steps
-
-- [Learn about Account Abstraction](/guide/concepts/account-abstraction)
-- [Explore use cases](/guide/use-cases/community-management)
-- [Read the full API reference](/api/)
-- [Try complete examples](/examples/)
-
-## Need Help?
-
-- [GitHub Issues](https://github.com/AAStarCommunity/aastar-sdk/issues)
-- [Discord](https://discord.gg/aastar)
-- [Documentation](https://docs.aastar.io)
+- **Manage Communities**: Use the [CommunityClient](../api/roles/community) to set reputation rules.
+- **Become a Provider**: Use the [OperatorClient](../api/roles/operator) to stake and sponsor gas.
+- **Advanced Features**: Explore the [API Reference](../api/) for deep customization.
