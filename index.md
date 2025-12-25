@@ -17,24 +17,6 @@ hero:
       link: https://github.com/AAStarCommunity/aastar-sdk
 
 features:
-  - icon: 
-      src: /easy.svg
-      alt: Easy to Use
-    title: Easy to Use
-    details: Simple and intuitive API design makes integration straightforward for developers of all levels.
-  
-  - icon:
-      src: /integration.svg
-      alt: Seamless Integration
-    title: Seamless Integration
-    details: Works seamlessly with existing Web3 infrastructure and popular frameworks.
-  
-  - icon:
-      src: /open.svg
-      alt: Open Source
-    title: Open Source
-    details: Fully open-source and community-driven development for transparency and collaboration.
-  
   - icon: 🚀
     title: Gasless Transactions
     details: SuperPaymaster (AOA+) enables users to send transactions without holding native tokens for gas fees.
@@ -59,6 +41,8 @@ features:
     title: Multi-Chain Ready
     details: Deploy on Ethereum, Optimism, and other EVM-compatible chains.
 ---
+
+<BigFeatures />
 
 ## Quick Example
 

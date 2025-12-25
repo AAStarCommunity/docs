@@ -1,0 +1,23 @@
+/**
+ * Custom styles for AAStar SDK documentation
+ */
+
+/**
+ * Custom styles for AAStar SDK documentation
+ */
+
+/* Adjust standard feature icon sizing for emojis */
+.VPFeature .icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+/* Ensure the feature grid has enough space */
+.VPFeatures {
+  padding: 32px 0 !important;
+}
+
+/* Add vertical spacing between components */
+.big-features-container + .VPFeatures {
+  padding-top: 0 !important;
+}
