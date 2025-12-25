@@ -2,8 +2,7 @@
 node_modules/
 pnpm-lock.yaml
 
-# VitePress build output and cache
-.vitepress/dist/
+# VitePress cache only (keep dist for deployment)
 .vitepress/cache/
 .vitepress/.temp/
 
