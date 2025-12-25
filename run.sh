@@ -1,1 +1,1 @@
-docsify serve .
+pnpm run docs:dev
