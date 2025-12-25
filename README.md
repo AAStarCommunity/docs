@@ -1,85 +1,63 @@
 # AAStar Documentation
 
-Official documentation for AAStar SDK.
+Official documentation site for AAStar SDK.
 
-## 🚀 Quick Start
+**Live Site**: https://docs.aastar.io
+
+## 🚀 Quick Deploy
 
 ```bash
+# Deploy to preview
+./deploy.sh
+
+# Deploy to production
+./deploy.sh --prod
+```
+
+## 📝 Local Development
+
+```bash
+# Restore package.json for local dev
+cp package.json.backup package.json
+cp package-lock.json.backup package-lock.json
+
 # Install dependencies
-pnpm install
+npm install
 
 # Start dev server
-pnpm run docs:dev
+npm run docs:dev
 
-# Build for production
-pnpm run docs:build
-
-# Preview production build
-pnpm run docs:preview
+# Build
+npm run docs:build
 ```
 
-## 📦 Deployment
+## 📦 Deployment Architecture
 
-### Deploy to Vercel
+- **Build**: Local (npm run docs:build)
+- **Deploy**: Vercel CLI (vercel --prod)
+- **Output**: .vitepress/dist/
+- **No online build** - Pure static file deployment
 
-```bash
-# Install Vercel CLI
-pnpm add -g vercel
-
-# Deploy
-vercel --prod
-```
-
-Then configure custom domain `docs.aastar.io` in Vercel dashboard.
-
-### Build Output
-
-- Build command: `pnpm run docs:build`
-- Output directory: `.vitepress/dist/`
-
-## 📝 Documentation Structure
+## 📂 Structure
 
 ```
 .
-├── .vitepress/          # VitePress config
-│   ├── config.ts        # Site configuration
-│   └── theme/           # Custom theme (if any)
-├── guide/               # User guides
-│   ├── getting-started.md
-│   ├── installation.md
-│   └── quick-start.md
-├── api/                 # API reference
-│   ├── roles/           # Role-based API docs
-│   └── modules/         # Module API docs
-├── examples/            # Complete examples
-└── public/              # Static assets
-    ├── aastar-logo.png
-    └── *.svg
+├── .vitepress/
+│   ├── config.ts       # VitePress config
+│   └── dist/           # Built files (gitignored, deploy only)
+├── api/                # API documentation
+├── guide/              # User guides
+├── examples/           # Code examples
+├── public/             # Static assets
+├── deploy.sh           # Deployment script
+└── package.json.backup # For local dev only
 ```
 
-## 🔄 Sync from SDK Repo
+## 🔄 Update Workflow
 
-Documentation is auto-extracted from the SDK repository:
-
-```bash
-# In SDK repo
-cd ../aastar-sdk
-bash scripts/extract-docs.sh
-
-# Commit and push
-cd ../aastar-docs
-git add .
-git commit -m "docs: sync from SDK"
-git push
-```
-
-Vercel will automatically deploy on push to main branch.
-
-## 🛠️ Development
-
-- **Framework**: VitePress 1.x
-- **Package Manager**: pnpm
-- **Node Version**: 18+
+1. Edit markdown files
+2. Run `./deploy.sh --prod`
+3. Done!
 
 ## 📄 License
 
