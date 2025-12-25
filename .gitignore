@@ -35,3 +35,4 @@ pnpm-debug.log*
 # Backup
 _backup_old_docs/
 .vercel
+node_modules/
