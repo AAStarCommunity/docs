@@ -4,19 +4,8 @@ export default defineConfig({
   title: 'AAStar SDK',
   description: 'Build Your Own Protocol with Account Abstraction',
   
+  lang: 'en',
   ignoreDeadLinks: true, // Ignore dead links from synced SDK docs
-  
-  locales: {
-    root: {
-      label: 'English',
-      lang: 'en',
-    },
-    zh: {
-      label: '简体中文',
-      lang: 'zh-CN',
-      link: '/zh/'
-    }
-  },
 
   themeConfig: {
     logo: '/aastar-logo.png',
