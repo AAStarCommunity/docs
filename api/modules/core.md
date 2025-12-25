@@ -1,0 +1,3 @@
+# @aastar/core
+
+Documentation coming soon...
