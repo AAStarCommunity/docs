@@ -4,6 +4,8 @@ export default defineConfig({
   title: 'AAStar SDK',
   description: 'Build Your Own Protocol with Account Abstraction',
   
+  ignoreDeadLinks: true, // Ignore dead links from synced SDK docs
+  
   themeConfig: {
     logo: '/aastar-logo.png',
     
