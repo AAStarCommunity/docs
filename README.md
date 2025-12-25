@@ -1,6 +1,7 @@
 # AAStar Documentation
 
 Official documentation site for AAStar SDK.
+Auto generated from aastar-sdk repo.
 
 **Live Site**: https://docs.aastar.io
 
