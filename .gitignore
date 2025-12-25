@@ -2,9 +2,14 @@
 node_modules/
 pnpm-lock.yaml
 
-# VitePress build output
+# VitePress build output and cache
 .vitepress/dist/
 .vitepress/cache/
+.vitepress/.temp/
+
+# Keep .vitepress/config.ts and theme files
+!.vitepress/config.ts
+!.vitepress/theme/
 
 # Environment files
 .env
