@@ -6,8 +6,7 @@
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview",
-    "docs:extract": "cd ../aastar-sdk && bash scripts/extract-docs.sh"
+    "docs:preview": "vitepress preview"
   },
   "devDependencies": {
     "vitepress": "^1.6.4",
