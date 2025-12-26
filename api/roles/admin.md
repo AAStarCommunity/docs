@@ -7,8 +7,9 @@ Complete API reference for protocol administrators.
 Admins are protocol-level administrators who manage global parameters, handle emergencies, and ensure protocol health. The Admin API enables you to:
 
 - Slash misbehaving operators
-- Set global protocol parameters
-- Configure fee structures
+- Manage Global Reputation (DVT/Reputation System)
+- Configure Paymaster V4 (AOA+) gas tokens and SBTs
+- Manage SuperPaymaster (AOA) dynamic pricing
 - Emergency pause/unpause
 - Manage protocol upgrades
 
@@ -187,6 +188,76 @@ console.log('✅ Protocol resumed');
 
 **Events Emitted:**
 - `ProtocolUnpaused(address indexed admin, uint256 timestamp)`
+
+---
+
+### `batchUpdateGlobalReputation(params)`
+
+Batch update global reputation for users with consensus proof.
+
+**Signature:**
+```typescript
+batchUpdateGlobalReputation(params: ReputationUpdateParams): Promise<Hash>
+```
+
+**Parameters:**
+
+| Name | Type | Description |
+|------|------|-------------|
+| params.users | `Address[]` | Array of user addresses |
+| params.newScores | `bigint[]` | Array of new reputation scores |
+| params.epoch | `uint256` | Update epoch (prevents replay) |
+| params.proof | `Hex` | BLS consensus proof |
+
+---
+
+### `PaymasterV4 Configuration`
+
+Manage Paymaster V4 (AOA+) settings.
+
+**Actions:**
+
+| Action | Description |
+|--------|-------------|
+| `addGasToken(args)` | Add supported ERC20 gas token |
+| `addSBT(args)` | Add supported qualification SBT |
+| `withdrawPNT(args)` | Withdraw accumulated PNT tokens to treasury |
+| `setServiceFeeRate(args)` | Set service fee in basis points |
+
+**Example:**
+```typescript
+await admin.addGasToken({
+  address: paymasterAddress,
+  token: GTOKEN_ADDRESS,
+});
+
+await admin.withdrawPNT({
+  address: paymasterAddress,
+  to: treasuryAddress,
+  token: GTOKEN_ADDRESS,
+  amount: parseEther('1000'),
+});
+```
+
+---
+
+### `SuperPaymaster Configuration`
+
+Manage SuperPaymaster (AOA) settings.
+
+**Actions:**
+
+| Action | Description |
+|--------|-------------|
+| `setXPNTsFactory(args)` | Configure factory for dynamic pricing |
+| `setOperatorPaused(args)` | Pause/Unpause specific operator |
+
+**Example:**
+```typescript
+await admin.setXPNTsFactory({
+  factory: XPNTS_FACTORY_ADDRESS,
+});
+```
 
 ---
 
