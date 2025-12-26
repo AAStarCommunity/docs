@@ -117,7 +117,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the MIT License.',
+      message: 'Released under the MIT License. | Last Updated: 2025-12-26',
       copyright: 'Copyright © 2024-present AAStar Community'
     },
 
