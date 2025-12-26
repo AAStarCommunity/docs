@@ -1,6 +1,8 @@
 {
-  "buildCommand": "pnpm run docs:build",
-  "outputDirectory": ".vitepress/dist",
-  "framework": "vitepress",
-  "cleanUrls": true
+  "version": 2,
+  "public": true,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1" }
+  ]
 }

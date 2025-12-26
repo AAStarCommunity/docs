@@ -3,7 +3,7 @@ node_modules/
 # pnpm-lock.yaml
 
 # VitePress build output (build locally, deploy with vercel CLI)
-.vitepress/dist/
+# .vitepress/dist/
 .vitepress/cache/
 .vitepress/.temp/
 
