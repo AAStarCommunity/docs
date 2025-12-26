@@ -57,21 +57,21 @@ SDK 目前完美支持两种核心代付逻辑，旨在覆盖从“中心化运�
 ```mermaid
 graph TD
     A[End User / 终端用户] --> B{Middleware}
-    B -->|AOA: SuperPaymaster| C[Pool-based Sponsorship]
-    B -->|AOA+: PaymasterV4| D[Token-based Sponsorship]
+    B -->|AOA: PaymasterV4| D[Independent Token-based Sponsorship]
+    B -->|AOA+: SuperPaymaster| C[Shared Pool-based Sponsorship]
     
-    C --> C1[Dynamic Pricing]
-    C --> C2[xPNTs Convertor]
+    C --> C1[Multi-operator Staking]
+    C --> C2[aPNTs / xPNTs Dynamic Pricing]
     
-    D --> D1[Gas Token Whitelist]
-    D --> D2[SBT Identity Check]
+    D --> D1[Community Ownership]
+    D --> D2[Specific Gas Token Whitelist]
 ```
 
 | Client / 客户端 | Targeted Developer / 目标开发者 | Core Responsibility / 核心职责 |
 | :--- | :--- | :--- |
-| **`EndUserClient`** | dApp Developer | Gasless UX, Smart Account management, Credit queries |
+| **`EndUserClient`** | dApp Developer | Gasless UX (AOA/AOA+), Smart Account management |
 | **`CommunityClient`** | Community/DAO Admin | Auto-onboarding, xPNTs deployment, SBT & Reputation |
-| **`OperatorClient`** | Node/Operator | SuperPaymaster registration, Staking, Pool management |
+| **`OperatorClient`** | Node/Operator | SuperPaymaster (AOA+) Staking, Paymaster (AOA) management |
 | **`AdminClient`** | Protocol Admin | DVT aggregations, Slashing, Global parameters |
 
 ---
