@@ -58,7 +58,7 @@ SDK 目前完美支持两种核心代付逻辑，旨在覆盖从“中心化运�
 graph TD
     A[End User / 终端用户] --> B{Middleware}
     B -->|AOA: PaymasterV4| D[Independent Token-based Sponsorship]
-    B -->|AOA+: SuperPaymaster| C[Shared Pool-based Sponsorship]
+    B -->|AOA+: SuperPaymaster V3| C[Shared Pool-based Sponsorship]
     
     C --> C1[Multi-operator Staking]
     C --> C2[aPNTs / xPNTs Dynamic Pricing]
