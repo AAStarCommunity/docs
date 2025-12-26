@@ -17,7 +17,8 @@
   - [📚 Contents / 目录](#-contents--目录)
   - [Introduction / 简介](#introduction--简介)
     - [Core Features / 核心特性](#core-features--核心特性)
-  - [SDK v2 Architecture / 架构设计](#sdk-v2-architecture--架构设计)
+  - [SDK Architecture / 架构设计](#sdk-architecture--架构设计)
+    - [Paymaster Models / 代付模型](#paymaster-models--代付模型)
   - [Installation / 安装](#installation--安装)
   - [Quick Start / 快速开始](#quick-start--快速开始)
     - [End User Gasless Transaction / 终端用户 Gasless 流程](#end-user-gasless-transaction--终端用户-gasless-流程)
@@ -45,9 +46,26 @@
 
 ---
 
-## SDK v2 Architecture / 架构设计
+## SDK Architecture / 架构设计
 
-AAStar SDK v2 采用 **「装饰器 (Actions-Decorator)」** 模式。它将低层次的合约交互与高层次的业务逻辑解耦，为生态系统中的四种角色提供专属的 Client 封装。
+AAStar SDK 采用 **「装饰器 (Actions-Decorator)」** 模式。它将低层次的合约交互与高层次的业务逻辑解耦，为生态系统中的四种角色提供专属的 Client 封装。
+
+### Paymaster Models / 代付模型
+
+SDK 目前完美支持两种核心代付逻辑，旨在覆盖从“中心化运营”到“去中心化社区”的全场景：
+
+```mermaid
+graph TD
+    A[End User / 终端用户] --> B{Middleware}
+    B -->|AOA: SuperPaymaster| C[Pool-based Sponsorship]
+    B -->|AOA+: PaymasterV4| D[Token-based Sponsorship]
+    
+    C --> C1[Dynamic Pricing]
+    C --> C2[xPNTs Convertor]
+    
+    D --> D1[Gas Token Whitelist]
+    D --> D2[SBT Identity Check]
+```
 
 | Client / 客户端 | Targeted Developer / 目标开发者 | Core Responsibility / 核心职责 |
 | :--- | :--- | :--- |

@@ -11,18 +11,35 @@ This example demonstrates how to set up and manage a SuperPaymaster as an Operat
 ## Code Preview
 
 ```typescript
-import { createOperatorClient } from '@aastar/core';
-import { parseEther } from 'viem';
+import { createOperatorClient } from '@aastar/sdk';
+import { parseEther, http } from 'viem';
+import { foundry } from 'viem/chains';
 
-const operator = createOperatorClient({ ... });
+const operator = createOperatorClient({
+  chain: foundry,
+  transport: http(),
+  account: operatorAccount,
+});
 
-// Stake GTokens
+// 1. Stake GTokens for SuperPaymaster (AOA)
 await operator.stake({
   amount: parseEther('100'),
 });
 
-// Deposit Gas Funds
+// 2. Deposit Gas Funds to SuperPaymaster (AOA)
 await operator.deposit({
   amount: parseEther('10'),
+});
+
+// 3. Manage PaymasterV4 (AOA+) Gas Tokens
+await operator.addGasToken({
+  paymasterAddress: '0x...',
+  tokenAddress: '0x...',
+  exchangeRate: parseEther('1'),
+});
+
+// 4. Query supported tokens
+const tokens = await operator.getSupportedGasTokens({
+  paymasterAddress: '0x...'
 });
 ```

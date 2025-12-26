@@ -4,25 +4,39 @@ This example demonstrates how to manage a community, issue SBTs, and configure r
 
 ## Steps
 
-1. **Registration**: Register your community name and metadata on-chain.
-2. **SBT Issuance**: Mint Soul-Bound Tokens to members to define their roles.
+1. **Registration**: Register your community registry role on-chain.
+2. **SBT Issuance**: Airdrop Soul-Bound Tokens to members to define their roles.
 3. **Reputation Setup**: Define rules that calculate member reputation based on activity.
 
 ## Code Preview
 
 ```typescript
-import { createCommunityClient } from '@aastar/core';
+import { createCommunityClient } from '@aastar/sdk';
+import { parseEther, http } from 'viem';
 
 const community = createCommunityClient({ ... });
 
-// Register Community
-await community.registerCommunity({
-  name: 'Alpha DAO',
+// 1. Register Community Registry Role
+await community.registerRole({
+  roleId: '0x...',
+  config: { 
+    minStake: parseEther('10'),
+    isActive: true,
+    description: "Alpha DAO Member"
+  }
 });
 
-// Mint SBT
-await community.mintSBT({
+// 2. Airdrop Soul-bound Tokens (SBT)
+await community.airdropSBT({
   to: memberAddress,
-  tokenId: 1n,
+  roleId: '0x...',
+  roleData: '0x...'
+});
+
+// 3. Update Global Reputation (Batch)
+// Requires BLS proof generated via SDK BLSSigner
+await community.batchUpdateGlobalReputation({
+  updates: [{ user: memberAddress, score: 100n }],
+  proof: blsProof // Generated from BLSSigner
 });
 ```
