@@ -1,6 +1,6 @@
 > **checkEligibility**(`client`, `paymaster`, `user`, `operator`): `Promise`\<\{ `credit?`: `bigint`; `eligible`: `boolean`; `token?`: `` `0x${string}` ``; \}\>
 
-Defined in: [SuperPaymaster/index.ts:47](https://github.com/AAStarCommunity/aastar-sdk/blob/de58973e339aee27579a805788c7048e2d9099f3/packages/paymaster/src/SuperPaymaster/index.ts#L47)
+Defined in: [SuperPaymaster/index.ts:49](https://github.com/AAStarCommunity/aastar-sdk/blob/89f481b5e82d27cdc5d83f918ddad6748e0e7c3e/packages/paymaster/src/SuperPaymaster/index.ts#L49)
 
 Enhanced eligibility check for SuperPaymaster V3.
 Validates that user has sufficient credit with the given operator.

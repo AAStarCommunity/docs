@@ -1,3 +1,3 @@
-> `const` **DVTValidatorABI**: (\{ `anonymous?`: `undefined`; `inputs`: `object`[]; `name?`: `undefined`; `outputs?`: `undefined`; `stateMutability`: `string`; `type`: `string`; \} \| \{ `anonymous?`: `undefined`; `inputs`: `object`[]; `name`: `string`; `outputs`: `object`[]; `stateMutability`: `string`; `type`: `string`; \} \| \{ `anonymous`: `boolean`; `inputs`: `object`[]; `name`: `string`; `outputs?`: `undefined`; `stateMutability?`: `undefined`; `type`: `string`; \} \| \{ `anonymous?`: `undefined`; `inputs`: `object`[]; `name`: `string`; `outputs?`: `undefined`; `stateMutability?`: `undefined`; `type`: `string`; \})[] = `DVTValidatorABIData`
+> `const` **DVTValidatorABI**: `any`
 
-Defined in: [packages/core/src/abis/index.ts:52](https://github.com/AAStarCommunity/aastar-sdk/blob/de58973e339aee27579a805788c7048e2d9099f3/packages/core/src/abis/index.ts#L52)
+Defined in: [packages/core/src/abis/index.ts:60](https://github.com/AAStarCommunity/aastar-sdk/blob/89f481b5e82d27cdc5d83f918ddad6748e0e7c3e/packages/core/src/abis/index.ts#L60)

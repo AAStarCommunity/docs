@@ -1,6 +1,6 @@
 > **getV2ContractsByDate**(`date`): [`ContractVersion`](../interfaces/ContractVersion.md)[]
 
-Defined in: [packages/core/src/contract-versions.ts:356](https://github.com/AAStarCommunity/aastar-sdk/blob/de58973e339aee27579a805788c7048e2d9099f3/packages/core/src/contract-versions.ts#L356)
+Defined in: [packages/core/src/contract-versions.ts:356](https://github.com/AAStarCommunity/aastar-sdk/blob/89f481b5e82d27cdc5d83f918ddad6748e0e7c3e/packages/core/src/contract-versions.ts#L356)
 
 Get all V2 contracts deployed on a specific date
 

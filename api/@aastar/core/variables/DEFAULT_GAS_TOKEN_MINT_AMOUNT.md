@@ -1,5 +1,5 @@
 > `const` **DEFAULT\_GAS\_TOKEN\_MINT\_AMOUNT**: `"100"` = `"100"`
 
-Defined in: [packages/core/src/constants.ts:28](https://github.com/AAStarCommunity/aastar-sdk/blob/de58973e339aee27579a805788c7048e2d9099f3/packages/core/src/constants.ts#L28)
+Defined in: [packages/core/src/constants.ts:92](https://github.com/AAStarCommunity/aastar-sdk/blob/89f481b5e82d27cdc5d83f918ddad6748e0e7c3e/packages/core/src/constants.ts#L92)
 
 Default amount of gas tokens to mint for testing (in token units)

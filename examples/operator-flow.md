@@ -1,55 +1,28 @@
 # Operator Flow Example
 
-This example demonstrates how to set up and manage Paymasters as an Operator under both AOA and AOA+ models.
+This example demonstrates how to set up and manage a SuperPaymaster as an Operator.
 
-## 1. AOA Mode: Independent Paymaster (PaymasterV4)
+## Steps
 
-In AOA mode, the operator owns and manages a specific PaymasterV4 instance.
+1. **Staking**: Deposit GTokens into the staking contract to become an authorized operator.
+2. **Paymaster Deposit**: Add ETH or other tokens to the SuperPaymaster's deposit pool for gas sponsorship.
+3. **Monitoring**: Track gas usage and reputation metrics.
+
+## Code Preview
 
 ```typescript
-import { createOperatorClient } from '@aastar/sdk';
+import { createOperatorClient } from '@aastar/core';
 import { parseEther } from 'viem';
 
 const operator = createOperatorClient({ ... });
 
-// 1. Configure the PaymasterV4 (Independent Mode)
-await operator.addGasToken({
-  address: '0x_PAYMASTER_V4_ADDRESS',
-  token: '0x_GAS_TOKEN_ADDRESS',
+// Stake GTokens
+await operator.stake({
+  amount: parseEther('100'),
 });
 
-// 2. Set service fee rate (e.g., 5%)
-await operator.setServiceFeeRate({
-  address: '0x_PAYMASTER_V4_ADDRESS',
-  rate: 5n
-});
-
-// 3. Query supported tokens
-const tokens = await operator.getSupportedGasTokens({
-  address: '0x_PAYMASTER_V4_ADDRESS'
-});
-```
-
-## 2. AOA+ Mode: Shared Paymaster (SuperPaymaster)
-
-In AOA+ mode, operators pool their resources into a shared SuperPaymaster contract.
-
-```typescript
-import { createOperatorClient } from '@aastar/sdk';
-import { parseEther, encodePacked } from 'viem';
-
-const operator = createOperatorClient({ ... });
-
-// Use the high-level onboarding helper
-// 1. Stake GTokens, 2. Register Role, 3. Deposit APNTs
-const txHashes = await operator.onboardToSuperPaymaster({
-  stakeAmount: parseEther('100'),
-  depositAmount: parseEther('50'),
-  roleId: '0x_OPERATOR_ROLE_ID'
-});
-
-// Or manage deposit manually
-await operator.depositAPNTs({
-  amount: parseEther('10')
+// Deposit Gas Funds
+await operator.deposit({
+  amount: parseEther('10'),
 });
 ```

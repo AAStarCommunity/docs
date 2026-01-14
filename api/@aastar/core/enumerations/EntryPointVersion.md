@@ -1,0 +1,17 @@
+Defined in: [packages/core/src/actions/entryPoint.ts:4](https://github.com/AAStarCommunity/aastar-sdk/blob/89f481b5e82d27cdc5d83f918ddad6748e0e7c3e/packages/core/src/actions/entryPoint.ts#L4)
+
+## Enumeration Members
+
+### V06
+
+> **V06**: `"0.6"`
+
+Defined in: [packages/core/src/actions/entryPoint.ts:5](https://github.com/AAStarCommunity/aastar-sdk/blob/89f481b5e82d27cdc5d83f918ddad6748e0e7c3e/packages/core/src/actions/entryPoint.ts#L5)
+
+***
+
+### V07
+
+> **V07**: `"0.7"`
+
+Defined in: [packages/core/src/actions/entryPoint.ts:6](https://github.com/AAStarCommunity/aastar-sdk/blob/89f481b5e82d27cdc5d83f918ddad6748e0e7c3e/packages/core/src/actions/entryPoint.ts#L6)
