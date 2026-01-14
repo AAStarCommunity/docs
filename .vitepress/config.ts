@@ -15,7 +15,7 @@ export default defineConfig({
       { text: 'API Reference', link: '/api/' },
       { text: 'Examples', link: '/examples/' },
       { 
-        text: 'v0.14.0', 
+        text: 'v0.16.6', 
         items: [
           { text: 'Changelog', link: '/changelog' },
           { text: 'GitHub', link: 'https://github.com/AAStarCommunity/aastar-sdk' }
