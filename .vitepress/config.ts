@@ -75,24 +75,13 @@ export default defineConfig({
 
       '/api/': [
         {
-          text: 'API Reference',
+          text: 'Packages',
           items: [
             { text: 'Overview', link: '/api/' },
-            { text: 'Operator API', link: '/api/roles/operator' },
-            { text: 'Community API', link: '/api/roles/community' },
-            { text: 'End User API', link: '/api/roles/enduser' },
-            { text: 'Admin API', link: '/api/roles/admin' }
-          ]
-        },
-        {
-          text: 'Modules',
-          items: [
-            { text: 'Core', link: '/api/modules/core' },
-            { text: 'Account', link: '/api/modules/account' },
-            { text: 'Paymaster', link: '/api/modules/paymaster' },
-            { text: 'Tokens', link: '/api/modules/tokens' },
-            { text: 'Identity', link: '/api/modules/identity' },
-            { text: 'DApp', link: '/api/modules/dapp' }
+            { text: '@aastar/core', link: '/api/@aastar/core/' },
+            { text: '@aastar/account', link: '/api/@aastar/account/' },
+            { text: '@aastar/paymaster', link: '/api/@aastar/paymaster/' },
+            { text: '@aastar/tokens', link: '/api/@aastar/tokens/' }
           ]
         }
       ],
