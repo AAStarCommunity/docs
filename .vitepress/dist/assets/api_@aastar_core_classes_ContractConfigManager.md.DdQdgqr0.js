@@ -1,0 +1,13 @@
+import { _ as _export_sfc, c as createElementBlock, o as openBlock, ag as createStaticVNode } from "./chunks/framework.vWx6JuJ5.js";
+const __pageData = JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"api/@aastar/core/classes/ContractConfigManager.md","filePath":"api/@aastar/core/classes/ContractConfigManager.md"}');
+const _sfc_main = { name: "api/@aastar/core/classes/ContractConfigManager.md" };
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [..._cache[0] || (_cache[0] = [
+    createStaticVNode('<p>Defined in: <a href="https://github.com/AAStarCommunity/aastar-sdk/blob/89f481b5e82d27cdc5d83f918ddad6748e0e7c3e/packages/core/src/config/ContractConfigManager.ts#L14" target="_blank" rel="noreferrer">packages/core/src/config/ContractConfigManager.ts:14</a></p><h2 id="constructors" tabindex="-1">Constructors <a class="header-anchor" href="#constructors" aria-label="Permalink to &quot;Constructors&quot;">​</a></h2><h3 id="constructor" tabindex="-1">Constructor <a class="header-anchor" href="#constructor" aria-label="Permalink to &quot;Constructor&quot;">​</a></h3><blockquote><p><strong>new ContractConfigManager</strong>(): <code>ContractConfigManager</code></p></blockquote><h4 id="returns" tabindex="-1">Returns <a class="header-anchor" href="#returns" aria-label="Permalink to &quot;Returns&quot;">​</a></h4><p><code>ContractConfigManager</code></p><h2 id="methods" tabindex="-1">Methods <a class="header-anchor" href="#methods" aria-label="Permalink to &quot;Methods&quot;">​</a></h2><h3 id="getconfig" tabindex="-1">getConfig() <a class="header-anchor" href="#getconfig" aria-label="Permalink to &quot;getConfig()&quot;">​</a></h3><blockquote><p><code>static</code> <strong>getConfig</strong>(): <a href="./../interfaces/SuperPaymasterConfig.html"><code>SuperPaymasterConfig</code></a></p></blockquote><p>Defined in: <a href="https://github.com/AAStarCommunity/aastar-sdk/blob/89f481b5e82d27cdc5d83f918ddad6748e0e7c3e/packages/core/src/config/ContractConfigManager.ts#L18" target="_blank" rel="noreferrer">packages/core/src/config/ContractConfigManager.ts:18</a></p><p>Get validated core configuration</p><h4 id="returns-1" tabindex="-1">Returns <a class="header-anchor" href="#returns-1" aria-label="Permalink to &quot;Returns&quot;">​</a></h4><p><a href="./../interfaces/SuperPaymasterConfig.html"><code>SuperPaymasterConfig</code></a></p>', 13)
+  ])]);
+}
+const ContractConfigManager = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export {
+  __pageData,
+  ContractConfigManager as default
+};

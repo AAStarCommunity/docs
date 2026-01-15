@@ -10,6 +10,12 @@ export default defineConfig({
   themeConfig: {
     logo: '/aastar-logo.png',
     
+    // Enable right sidebar (TOC)
+    outline: {
+      level: [2, 3],
+      label: 'On this page'
+    },
+    
     nav: [
       { text: 'Guide', link: '/guide/getting-started' },
       { text: 'API Reference', link: '/api/' },
@@ -75,13 +81,72 @@ export default defineConfig({
 
       '/api/': [
         {
-          text: 'Packages',
+          text: 'Getting Started',
           items: [
             { text: 'Overview', link: '/api/' },
-            { text: '@aastar/core', link: '/api/@aastar/core/' },
-            { text: '@aastar/account', link: '/api/@aastar/account/' },
-            { text: '@aastar/paymaster', link: '/api/@aastar/paymaster/' },
-            { text: '@aastar/tokens', link: '/api/@aastar/tokens/' }
+            { text: 'Installation', link: '/api/#installation' },
+            { text: 'Quick Start', link: '/api/#quick-start' }
+          ]
+        },
+        {
+          text: '@aastar/sdk (Meta Package)',
+          items: [
+            { text: 'Overview', link: '/api/@aastar/sdk/' }
+          ]
+        },
+        {
+          text: '@aastar/core',
+          collapsed: false,
+          items: [
+            { text: 'Overview', link: '/api/@aastar/core/' },
+            { text: 'Networks', link: '/api/@aastar/core/#networks' },
+            { text: 'Contract Addresses', link: '/api/@aastar/core/#contract-addresses' },
+            { text: 'ABIs & Actions', link: '/api/@aastar/core/#abis-and-actions' },
+            { 
+              text: 'TypeDoc Reference',
+              collapsed: true,
+              items: [
+                { text: 'Classes (7)', link: '/api/@aastar/core/classes/' },
+                { text: 'Functions (50+)', link: '/api/@aastar/core/functions/' },
+                { text: 'Interfaces (14)', link: '/api/@aastar/core/interfaces/' },
+                { text: 'Types (20)', link: '/api/@aastar/core/type-aliases/' },
+                { text: 'Variables (100+)', link: '/api/@aastar/core/variables/' },
+                { text: 'Enumerations (3)', link: '/api/@aastar/core/enumerations/' }
+              ]
+            }
+          ]
+        },
+        {
+          text: '@aastar/account',
+          items: [
+            { text: 'Overview', link: '/api/@aastar/account/' }
+          ]
+        },
+        {
+          text: '@aastar/paymaster',
+          items: [
+            { text: 'Overview', link: '/api/@aastar/paymaster/' }
+          ]
+        },
+        {
+          text: '@aastar/tokens',
+          items: [
+            { text: 'Overview', link: '/api/@aastar/tokens/' }
+          ]
+        },
+        {
+          text: 'Other Packages',
+          collapsed: true,
+          items: [
+            { text: '@aastar/analytics', link: '/api/@aastar/analytics/' },
+            { text: '@aastar/dapp', link: '/api/@aastar/dapp/' },
+            { text: '@aastar/identity', link: '/api/@aastar/identity/' }
+          ]
+        },
+        {
+          text: 'Examples',
+          items: [
+            { text: 'Complete Examples', link: '/api/#complete-examples' }
           ]
         }
       ],
@@ -106,7 +171,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the MIT License. | Last Updated: 2025-12-26 13:20',
+      message: 'Released under the MIT License. | Last Updated: 2026-01-15 09:16',
       copyright: 'Copyright © 2023-present AAStar Community'
     },
 
