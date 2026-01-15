@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as r,ag as s}from"./chunks/framework.dvv-DFtf.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"api/index.md","filePath":"api/index.md"}'),i={name:"api/index.md"};function l(n,a,o,c,d,h){return r(),e("div",null,[...a[0]||(a[0]=[s("",2)])])}const m=t(i,[["render",l]]);export{_ as __pageData,m as default};

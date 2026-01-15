@@ -1,6 +1,9 @@
-# Classes
+# classes
 
-- [SepoliaFaucetAPI](./SepoliaFaucetAPI.md)
+- [AAStarValidationError](./AAStarValidationError.md)
+- [BLSSigner](./BLSSigner.md)
 - [BaseClient](./BaseClient.md)
-- [FinanceClient](./FinanceClient.md)
+- [ContractConfigManager](./ContractConfigManager.md)
 - [RequirementChecker](./RequirementChecker.md)
+- [SepoliaFaucetAPI](./SepoliaFaucetAPI.md)
+- [StateValidator](./StateValidator.md)
