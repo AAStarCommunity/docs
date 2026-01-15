@@ -1,0 +1,13 @@
+import { _ as _export_sfc, c as createElementBlock, o as openBlock, ag as createStaticVNode } from "./chunks/framework.vWx6JuJ5.js";
+const __pageData = JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"api/@aastar/sdk/variables/ROLE_PAYMASTER_SUPER.md","filePath":"api/@aastar/sdk/variables/ROLE_PAYMASTER_SUPER.md"}');
+const _sfc_main = { name: "api/@aastar/sdk/variables/ROLE_PAYMASTER_SUPER.md" };
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [..._cache[0] || (_cache[0] = [
+    createStaticVNode('<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> ROLE_PAYMASTER_SUPER</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> Hash</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span></code></pre></div><p>Defined in: <a href="https://github.com/AAStarCommunity/aastar-sdk/blob/c62b4370b37b568ac4c9186927802ebc0956c34c/packages/core/src/roles.ts#L69" target="_blank" rel="noreferrer">packages/core/src/roles.ts:69</a></p><p>Paymaster Super Role</p><h2 id="remarks" tabindex="-1">Remarks <a class="header-anchor" href="#remarks" aria-label="Permalink to &quot;Remarks&quot;">​</a></h2><ul><li><strong>Description</strong>: Advanced Paymaster operator, can use SuperPaymaster with aPNTs collateral</li><li><strong>Permission</strong>: Infrastructure operator (higher tier)</li><li><strong>Requirement</strong>: minStake: 50 GT, entryBurn: 5 GT (line 93)</li><li><strong>Additional Requirement</strong>: aPNTs collateral in SuperPaymaster contract</li><li><strong>Exit Fee</strong>: 10% (1000 basis points), min 2 GT</li><li><strong>Lock Duration</strong>: 30 days</li><li><strong>Source</strong>: Registry.sol line 35: ROLE_PAYMASTER_SUPER = keccak256(&quot;PAYMASTER_SUPER&quot;)</li></ul>', 5)
+  ])]);
+}
+const ROLE_PAYMASTER_SUPER = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export {
+  __pageData,
+  ROLE_PAYMASTER_SUPER as default
+};
