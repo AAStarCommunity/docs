@@ -76,6 +76,15 @@ export default defineConfig({
             { text: 'EOA Rainbow Bridge', link: '/zh/guide/concepts/rainbow-bridge' },
             { text: '聲譽系統', link: '/zh/guide/concepts/reputation' }
           ]
+        },
+        {
+          text: '应用场景',
+          items: [
+            { text: '社区管理', link: '/zh/guide/use-cases/community-management' },
+            { text: 'Gasless 交易', link: '/zh/guide/use-cases/gasless-transactions' },
+            { text: 'Operator 質押', link: '/zh/guide/use-cases/operator-staking' },
+            { text: '自建協議', link: '/zh/guide/use-cases/yop' }
+          ]
         }
       ],
 
