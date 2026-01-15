@@ -46,7 +46,7 @@ features:
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="display:inline-block; margin-right: 10px;" />
   <img src="https://img.shields.io/badge/TypeScript-5.0-blue" alt="TypeScript" style="display:inline-block; margin-right: 10px;" />
   <img src="https://img.shields.io/badge/Status-0.16.6-green" alt="Status" style="display:inline-block; margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/Last_Updated-2025--12--26_13:20-orange" alt="Last Updated" style="display:inline-block;" />
+  <img src="https://img.shields.io/badge/Last_Updated-2026--01--15-orange" alt="Last Updated" style="display:inline-block;" />
 </p>
 
 <BigFeatures />
@@ -54,8 +54,9 @@ features:
 ## Quick Example
 
 ```typescript
-import { createOperatorClient, CONTRACTS } from '@aastar/core';
-import { parseEther } from 'viem';
+import { createOperatorClient } from '@aastar/sdk';
+import { parseEther, http } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
 import { sepolia } from 'viem/chains';
 
 // Create operator client
@@ -65,12 +66,12 @@ const operator = createOperatorClient({
   account: privateKeyToAccount(process.env.OPERATOR_KEY),
 });
 
-// Stake GTokens
+// Stake GTokens (used for role collateral)
 await operator.stake({
   amount: parseEther('100'),
 });
 
-// Deposit to Paymaster
+// Deposit aPNTs (used for sponsoring gas)
 await operator.deposit({
   amount: parseEther('10'),
 });
