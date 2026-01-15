@@ -430,6 +430,5 @@ Want to add more examples? Contributions are welcome!
 
 ## Support
 
-- **Discord**: [Join our community](https://discord.gg/aastar)
 - **GitHub Issues**: [Report bugs](https://github.com/AAStarCommunity/aastar-sdk/issues)
 - **Documentation**: [docs.aastar.io](https://docs.aastar.io)

@@ -97,4 +97,3 @@ Found a bug or have a feature request? Please open an issue on GitHub:
 
 - ⭐ Star the repository: [AAStarCommunity/aastar-sdk](https://github.com/AAStarCommunity/aastar-sdk)
 - 👀 Watch for releases to get notified
-- 📢 Follow us on [Discord](https://discord.gg/aastar)

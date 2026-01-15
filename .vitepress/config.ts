@@ -99,9 +99,6 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Overview', link: '/api/@aastar/core/' },
-            { text: 'Networks', link: '/api/@aastar/core/#networks' },
-            { text: 'Contract Addresses', link: '/api/@aastar/core/#contract-addresses' },
-            { text: 'ABIs & Actions', link: '/api/@aastar/core/#abis-and-actions' },
             { 
               text: 'TypeDoc Reference',
               collapsed: true,
