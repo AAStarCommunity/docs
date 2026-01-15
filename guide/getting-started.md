@@ -228,17 +228,17 @@ The SDK supports doctoral data collection for the SuperPaymaster paper. Official
 
 The SDK provides comprehensive TypeDoc-generated API documentation for all packages:
 
-- **📖 [Full API Documentation](./docs/api/)** - Complete reference for all packages
+- **📖 [Full API Documentation](../api/)** - Complete reference for all packages
 - **🌐 [Online Documentation](https://docs.aastar.io)** - Hosted documentation site
 
 ### 📊 Documentation Coverage
 
 | Package | Classes | Functions | Interfaces | Types | Total APIs |
 |---------|---------|-----------|------------|-------|------------|
-| **[@aastar/core](./docs/api/@aastar/core/)** | 7 | 51 | 14 | 20 | **92+** |
-| **[@aastar/account](./docs/api/@aastar/account/)** | 1 | 4 | 2 | 2 | **9** |
-| **[@aastar/paymaster](./docs/api/@aastar/paymaster/)** | 4 | 7 | 4 | 4 | **19** |
-| **[@aastar/tokens](./docs/api/@aastar/tokens/)** | 1 | 15+ | - | - | **16+** |
+| **[@aastar/core](../api/@aastar/core/)** | 7 | 51 | 14 | 20 | **92+** |
+| **[@aastar/account](../api/@aastar/account/)** | 1 | 4 | 2 | 2 | **9** |
+| **[@aastar/paymaster](../api/@aastar/paymaster/)** | 4 | 7 | 4 | 4 | **19** |
+| **[@aastar/tokens](../api/@aastar/tokens/)** | 1 | 15+ | - | - | **16+** |
 | **Total** | **13** | **77+** | **20+** | **26+** | **136+** |
 
 ### 🔍 Key API Highlights
