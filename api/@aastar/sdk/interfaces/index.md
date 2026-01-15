@@ -4,7 +4,6 @@
 - [BalanceValidationParams](./BalanceValidationParams.md)
 - [ClientConfig](./ClientConfig.md)
 - [CommunityConfig](./CommunityConfig.md)
-- [ContractVersion](./ContractVersion.md)
 - [DecodedEvent](./DecodedEvent.md)
 - [DeploymentValidationParams](./DeploymentValidationParams.md)
 - [ExperimentRecord](./ExperimentRecord.md)

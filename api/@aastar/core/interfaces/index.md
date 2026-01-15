@@ -4,7 +4,6 @@
 - [BalanceValidationParams](./BalanceValidationParams.md)
 - [ClientConfig](./ClientConfig.md)
 - [CommunityConfig](./CommunityConfig.md)
-- [ContractVersion](./ContractVersion.md)
 - [DeploymentValidationParams](./DeploymentValidationParams.md)
 - [RoleConfig](./RoleConfig.md)
 - [RoleRequirement](./RoleRequirement.md)
