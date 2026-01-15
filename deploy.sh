@@ -34,11 +34,11 @@ cp vercel.json .vitepress/dist/
 
 if [ "$1" == "--prod" ]; then
     echo "Deploying to PRODUCTION..."
-    vercel .vitepress/dist --prod --yes
+    vercel .vitepress/dist --prod --yes --archive=tgz
 else
     echo "Deploying to PREVIEW..."
     echo "Use './deploy.sh --prod' for production deployment"
-    vercel .vitepress/dist --yes
+    vercel .vitepress/dist --yes --archive=tgz
 fi
 
 echo -e "\n${GREEN}✅ Deployment complete!${NC}"
