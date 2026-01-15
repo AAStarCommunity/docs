@@ -27,19 +27,25 @@ npm run docs:build
 echo -e "${GREEN}✅ Build complete${NC}"
 
 # Step 2: Deploy to Vercel
-echo -e "\n${YELLOW}🚀 Deploying to Vercel from build directory...${NC}"
+echo -e "\n${YELLOW}🚀 Deploying to Vercel via TGZ archive...${NC}"
 
-# Ensure vercel.json is in the build directory as required by Vercel CLI when deploying a subdirectory
+# Ensure vercel.json is in the build directory
 cp vercel.json .vitepress/dist/
+
+# Step 2.1: Create local archive (this solves the 5000-file-limit issue decisively)
+tar -czf site.tgz -C .vitepress/dist .
 
 if [ "$1" == "--prod" ]; then
     echo "Deploying to PRODUCTION..."
-    vercel .vitepress/dist --prod --yes --archive=tgz
+    vercel site.tgz --prod --yes
 else
     echo "Deploying to PREVIEW..."
     echo "Use './deploy.sh --prod' for production deployment"
-    vercel .vitepress/dist --yes --archive=tgz
+    vercel site.tgz --yes
 fi
+
+# Clean up
+rm site.tgz
 
 echo -e "\n${GREEN}✅ Deployment complete!${NC}"
 echo -e "Visit: ${YELLOW}https://docs.aastar.io${NC}"
