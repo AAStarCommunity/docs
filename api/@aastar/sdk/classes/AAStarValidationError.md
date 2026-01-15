@@ -1,4 +1,4 @@
-Defined in: [packages/core/src/utils/validation.ts:3](https://github.com/AAStarCommunity/aastar-sdk/blob/c62b4370b37b568ac4c9186927802ebc0956c34c/packages/core/src/utils/validation.ts#L3)
+Defined in: [packages/core/src/utils/validation.ts:3](https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/core/src/utils/validation.ts#L3)
 
 ## Extends
 
@@ -12,7 +12,7 @@ Defined in: [packages/core/src/utils/validation.ts:3](https://github.com/AAStarC
 new AAStarValidationError(message): AAStarValidationError;
 ```
 
-Defined in: [packages/core/src/utils/validation.ts:4](https://github.com/AAStarCommunity/aastar-sdk/blob/c62b4370b37b568ac4c9186927802ebc0956c34c/packages/core/src/utils/validation.ts#L4)
+Defined in: [packages/core/src/utils/validation.ts:4](https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/core/src/utils/validation.ts#L4)
 
 #### Parameters
 

@@ -5,7 +5,7 @@ function createEOAWalletClient(
    transport): EOAWalletClient;
 ```
 
-Defined in: [packages/account/src/eoa.ts:9](https://github.com/AAStarCommunity/aastar-sdk/blob/c62b4370b37b568ac4c9186927802ebc0956c34c/packages/account/src/eoa.ts#L9)
+Defined in: [packages/account/src/eoa.ts:9](https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/account/src/eoa.ts#L9)
 
 ## Parameters
 

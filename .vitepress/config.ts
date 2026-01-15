@@ -84,8 +84,8 @@ export default defineConfig({
           text: 'Getting Started',
           items: [
             { text: 'Overview', link: '/api/' },
-            { text: 'Installation', link: '/api/#installation' },
-            { text: 'Quick Start', link: '/api/#quick-start' }
+            { text: 'Installation', link: '/api/@aastar/sdk/#installation' },
+            { text: 'Quick Start', link: '/api/@aastar/sdk/#usage' }
           ]
         },
         {
@@ -103,12 +103,12 @@ export default defineConfig({
               text: 'TypeDoc Reference',
               collapsed: true,
               items: [
-                { text: 'Classes (7)', link: '/api/@aastar/core/classes/' },
-                { text: 'Functions (50+)', link: '/api/@aastar/core/functions/' },
-                { text: 'Interfaces (14)', link: '/api/@aastar/core/interfaces/' },
-                { text: 'Types (20)', link: '/api/@aastar/core/type-aliases/' },
-                { text: 'Variables (100+)', link: '/api/@aastar/core/variables/' },
-                { text: 'Enumerations (3)', link: '/api/@aastar/core/enumerations/' }
+                { text: 'Classes', link: '/api/@aastar/core/classes/' },
+                { text: 'Functions', link: '/api/@aastar/core/functions/' },
+                { text: 'Interfaces', link: '/api/@aastar/core/interfaces/' },
+                { text: 'Types', link: '/api/@aastar/core/type-aliases/' },
+                { text: 'Variables', link: '/api/@aastar/core/variables/' },
+                { text: 'Enumerations', link: '/api/@aastar/core/enumerations/' }
               ]
             }
           ]
@@ -143,7 +143,7 @@ export default defineConfig({
         {
           text: 'Examples',
           items: [
-            { text: 'Complete Examples', link: '/api/#complete-examples' }
+            { text: 'SDK Examples', link: '/api/@aastar/sdk/functions/index' }
           ]
         }
       ],

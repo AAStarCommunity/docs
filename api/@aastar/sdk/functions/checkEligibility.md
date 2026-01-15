@@ -10,7 +10,7 @@ function checkEligibility(
 }>;
 ```
 
-Defined in: [packages/paymaster/src/SuperPaymaster/index.ts:49](https://github.com/AAStarCommunity/aastar-sdk/blob/c62b4370b37b568ac4c9186927802ebc0956c34c/packages/paymaster/src/SuperPaymaster/index.ts#L49)
+Defined in: [packages/paymaster/src/SuperPaymaster/index.ts:49](https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/paymaster/src/SuperPaymaster/index.ts#L49)
 
 Enhanced eligibility check for SuperPaymaster V3.
 Validates that user has sufficient credit with the given operator.

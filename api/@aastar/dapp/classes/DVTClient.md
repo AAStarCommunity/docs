@@ -1,4 +1,4 @@
-Defined in: [packages/dapp/src/ui/index.ts:10](https://github.com/AAStarCommunity/aastar-sdk/blob/c62b4370b37b568ac4c9186927802ebc0956c34c/packages/dapp/src/ui/index.ts#L10)
+Defined in: [packages/dapp/src/ui/index.ts:10](https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/dapp/src/ui/index.ts#L10)
 
 ## Constructors
 
@@ -23,7 +23,7 @@ static registerValidator(
 blsPublicKey): Promise<`0x${string}`>;
 ```
 
-Defined in: [packages/dapp/src/ui/index.ts:11](https://github.com/AAStarCommunity/aastar-sdk/blob/c62b4370b37b568ac4c9186927802ebc0956c34c/packages/dapp/src/ui/index.ts#L11)
+Defined in: [packages/dapp/src/ui/index.ts:11](https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/dapp/src/ui/index.ts#L11)
 
 #### Parameters
 

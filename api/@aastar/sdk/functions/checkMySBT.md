@@ -8,7 +8,7 @@ function checkMySBT(
 }>;
 ```
 
-Defined in: packages/identity/dist/mysbt.d.ts:5
+Defined in: [packages/identity/src/mysbt.ts:8](https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/identity/src/mysbt.ts#L8)
 
 Check if user holds MySBT token (identity verification).
 

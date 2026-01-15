@@ -5,7 +5,7 @@ function getMySBTId(
 user): Promise<bigint | null>;
 ```
 
-Defined in: [packages/identity/src/mysbt.ts:35](https://github.com/AAStarCommunity/aastar-sdk/blob/c62b4370b37b568ac4c9186927802ebc0956c34c/packages/identity/src/mysbt.ts#L35)
+Defined in: [packages/identity/src/mysbt.ts:35](https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/identity/src/mysbt.ts#L35)
 
 Fetch MySBT token ID for a specific user (if unique/SBT).
 Note: Depends on whether the contract supports getTokenId or similar.
