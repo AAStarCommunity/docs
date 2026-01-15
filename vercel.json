@@ -2,6 +2,9 @@
   "version": 2,
   "public": true,
   "cleanUrls": true,
+  "framework": "vitepress",
+  "buildCommand": "npm run docs:build",
+  "outputDirectory": ".vitepress/dist",
   "rewrites": [
     { "source": "/(.*)", "destination": "/$1" }
   ]

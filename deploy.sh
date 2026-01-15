@@ -27,18 +27,18 @@ npm run docs:build
 echo -e "${GREEN}✅ Build complete${NC}"
 
 # Step 2: Deploy to Vercel
-echo -e "\n${YELLOW}🚀 Deploying to Vercel from build directory...${NC}"
+echo -e "\n${YELLOW}🚀 Deploying to Vercel (Remote Build Mode)...${NC}"
 
-# Ensure vercel.json is in the build directory as required by Vercel CLI when deploying a subdirectory
-cp vercel.json .vitepress/dist/
+# Using "vercel" without path argument triggers Cloud Build based on vercel.json config
+# This is the gold standard for bypassing local upload limits
 
 if [ "$1" == "--prod" ]; then
     echo "Deploying to PRODUCTION..."
-    vercel .vitepress/dist --prod --yes --archive=tgz
+    vercel --prod --yes
 else
     echo "Deploying to PREVIEW..."
     echo "Use './deploy.sh --prod' for production deployment"
-    vercel .vitepress/dist --yes --archive=tgz
+    vercel --yes
 fi
 
 echo -e "\n${GREEN}✅ Deployment complete!${NC}"
