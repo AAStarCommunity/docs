@@ -1,0 +1,13 @@
+import { _ as _export_sfc, c as createElementBlock, o as openBlock, ag as createStaticVNode } from "./chunks/framework.vWx6JuJ5.js";
+const __pageData = JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"api/@aastar/sdk/functions/logDecodedEvents.md","filePath":"api/@aastar/sdk/functions/logDecodedEvents.md"}');
+const _sfc_main = { name: "api/@aastar/sdk/functions/logDecodedEvents.md" };
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [..._cache[0] || (_cache[0] = [
+    createStaticVNode('<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> logDecodedEvents</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">events</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> void</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span></code></pre></div><p>Defined in: <a href="https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/sdk/src/utils/eventDecoder.ts#L56" target="_blank" rel="noreferrer">packages/sdk/src/utils/eventDecoder.ts:56</a></p><h2 id="parameters" tabindex="-1">Parameters <a class="header-anchor" href="#parameters" aria-label="Permalink to &quot;Parameters&quot;">​</a></h2><table tabindex="0"><thead><tr><th>Parameter</th><th>Type</th></tr></thead><tbody><tr><td><code>events</code></td><td><a href="./../interfaces/DecodedEvent.html"><code>DecodedEvent</code></a>[]</td></tr></tbody></table><h2 id="returns" tabindex="-1">Returns <a class="header-anchor" href="#returns" aria-label="Permalink to &quot;Returns&quot;">​</a></h2><p><code>void</code></p>', 6)
+  ])]);
+}
+const logDecodedEvents = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export {
+  __pageData,
+  logDecodedEvents as default
+};

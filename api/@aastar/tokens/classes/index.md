@@ -1,3 +1,0 @@
-# classes
-
-- [FinanceClient](./FinanceClient.md)

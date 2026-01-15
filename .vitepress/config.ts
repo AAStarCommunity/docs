@@ -84,66 +84,34 @@ export default defineConfig({
           text: 'Getting Started',
           items: [
             { text: 'Overview', link: '/api/' },
-            { text: 'Installation', link: '/api/@aastar/sdk/#installation' },
-            { text: 'Quick Start', link: '/api/@aastar/sdk/#usage' }
+            { text: 'Installation', link: '/api/@aastar/sdk#installation' },
+            { text: 'Quick Start', link: '/api/@aastar/sdk#usage' }
           ]
         },
         {
           text: '@aastar/sdk (Meta Package)',
           items: [
-            { text: 'Overview', link: '/api/@aastar/sdk/' }
+            { text: 'Overview', link: '/api/@aastar/sdk' },
+            { text: 'Node.js Tools', link: '/api/@aastar/sdk/node' }
           ]
         },
         {
-          text: '@aastar/core',
+          text: 'Core Modules',
           collapsed: false,
           items: [
-            { text: 'Overview', link: '/api/@aastar/core/' },
-            { 
-              text: 'TypeDoc Reference',
-              collapsed: true,
-              items: [
-                { text: 'Classes', link: '/api/@aastar/core/classes/' },
-                { text: 'Functions', link: '/api/@aastar/core/functions/' },
-                { text: 'Interfaces', link: '/api/@aastar/core/interfaces/' },
-                { text: 'Types', link: '/api/@aastar/core/type-aliases/' },
-                { text: 'Variables', link: '/api/@aastar/core/variables/' },
-                { text: 'Enumerations', link: '/api/@aastar/core/enumerations/' }
-              ]
-            }
-          ]
-        },
-        {
-          text: '@aastar/account',
-          items: [
-            { text: 'Overview', link: '/api/@aastar/account/' }
-          ]
-        },
-        {
-          text: '@aastar/paymaster',
-          items: [
-            { text: 'Overview', link: '/api/@aastar/paymaster/' }
-          ]
-        },
-        {
-          text: '@aastar/tokens',
-          items: [
-            { text: 'Overview', link: '/api/@aastar/tokens/' }
-          ]
-        },
-        {
-          text: 'Other Packages',
-          collapsed: true,
-          items: [
-            { text: '@aastar/analytics', link: '/api/@aastar/analytics/' },
-            { text: '@aastar/dapp', link: '/api/@aastar/dapp/' },
-            { text: '@aastar/identity', link: '/api/@aastar/identity/' }
+            { text: '@aastar/core', link: '/api/@aastar/core' },
+            { text: '@aastar/account', link: '/api/@aastar/account' },
+            { text: '@aastar/paymaster', link: '/api/@aastar/paymaster' },
+            { text: '@aastar/tokens', link: '/api/@aastar/tokens' },
+            { text: '@aastar/identity', link: '/api/@aastar/identity' },
+            { text: '@aastar/analytics', link: '/api/@aastar/analytics' },
+            { text: '@aastar/dapp', link: '/api/@aastar/dapp' }
           ]
         },
         {
           text: 'Examples',
           items: [
-            { text: 'SDK Examples', link: '/api/@aastar/sdk/functions/index' }
+            { text: 'SDK Handbooks', link: '/api/@aastar/sdk#core-scenarios' }
           ]
         }
       ],

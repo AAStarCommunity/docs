@@ -1,3 +1,0 @@
-# classes
-
-- [UserOpClient](./UserOpClient.md)

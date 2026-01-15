@@ -1,0 +1,13 @@
+import { _ as _export_sfc, c as createElementBlock, o as openBlock, ag as createStaticVNode } from "./chunks/framework.vWx6JuJ5.js";
+const __pageData = JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"api/@aastar/sdk/variables/PAYMASTER_ADDRESSES.md","filePath":"api/@aastar/sdk/variables/PAYMASTER_ADDRESSES.md"}');
+const _sfc_main = { name: "api/@aastar/sdk/variables/PAYMASTER_ADDRESSES.md" };
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [..._cache[0] || (_cache[0] = [
+    createStaticVNode('<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> PAYMASTER_ADDRESSES</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> object</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span></code></pre></div><p>Defined in: <a href="https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/core/src/contract-addresses.ts#L77" target="_blank" rel="noreferrer">packages/core/src/contract-addresses.ts:77</a></p><p>Paymaster Addresses</p><h2 id="type-declaration" tabindex="-1">Type Declaration <a class="header-anchor" href="#type-declaration" aria-label="Permalink to &quot;Type Declaration&quot;">​</a></h2><table tabindex="0"><thead><tr><th>Name</th><th>Type</th><th>Default value</th><th>Defined in</th></tr></thead><tbody><tr><td><a id="paymasterv4_1"></a> <code>paymasterV4_1</code></td><td><code>`0x${string}`</code></td><td>-</td><td><a href="https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/core/src/contract-addresses.ts#L78" target="_blank" rel="noreferrer">packages/core/src/contract-addresses.ts:78</a></td></tr><tr><td><a id="paymasterv4_1iimplementation"></a> <code>paymasterV4_1iImplementation</code></td><td><code>`0x${string}`</code></td><td><code>PAYMASTER_V4_IMPL_ADDRESS</code></td><td><a href="https://github.com/AAStarCommunity/aastar-sdk/blob/6f545c3bc3e9627fe8caae45eaa241648f3aa4b8/packages/core/src/contract-addresses.ts#L79" target="_blank" rel="noreferrer">packages/core/src/contract-addresses.ts:79</a></td></tr></tbody></table>', 5)
+  ])]);
+}
+const PAYMASTER_ADDRESSES = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export {
+  __pageData,
+  PAYMASTER_ADDRESSES as default
+};

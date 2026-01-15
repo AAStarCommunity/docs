@@ -1,3 +1,0 @@
-# enumerations
-
-- [UserOpScenarioType](./UserOpScenarioType.md)
