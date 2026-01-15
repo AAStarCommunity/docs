@@ -5,7 +5,6 @@ export default defineConfig({
   description: 'Build Your Own Protocol with Account Abstraction',
   
   lang: 'en',
-  base: '/docs/', // Required for GitHub Pages project site (https://<user>.github.io/<repo>/)
   ignoreDeadLinks: true, // Ignore dead links from synced SDK docs
 
   themeConfig: {
