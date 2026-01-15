@@ -27,15 +27,18 @@ npm run docs:build
 echo -e "${GREEN}✅ Build complete${NC}"
 
 # Step 2: Deploy to Vercel
-echo -e "\n${YELLOW}🚀 Deploying to Vercel...${NC}"
+echo -e "\n${YELLOW}🚀 Deploying to Vercel from build directory...${NC}"
+
+# Ensure vercel.json is in the build directory as required by Vercel CLI when deploying a subdirectory
+cp vercel.json .vitepress/dist/
 
 if [ "$1" == "--prod" ]; then
     echo "Deploying to PRODUCTION..."
-    vercel --prod
+    vercel .vitepress/dist --prod --yes
 else
     echo "Deploying to PREVIEW..."
     echo "Use './deploy.sh --prod' for production deployment"
-    vercel
+    vercel .vitepress/dist --yes
 fi
 
 echo -e "\n${GREEN}✅ Deployment complete!${NC}"
