@@ -2,7 +2,27 @@
 
 Get up and running with the AAStar SDK in less than 5 minutes.
 
-## 1. Environment Setup
+## 1. Install SDK
+
+Install the AAStar SDK and its peer dependency `viem` using your preferred package manager:
+
+::: code-group
+
+```bash [pnpm]
+pnpm add @aastar/sdk viem
+```
+
+```bash [npm]
+npm install @aastar/sdk viem
+```
+
+```bash [yarn]
+yarn add @aastar/sdk viem
+```
+
+:::
+
+## 2. Environment Setup
 
 Create a `.env` file with your private key and RPC provider:
 
@@ -11,7 +31,7 @@ PRIVATE_KEY_JASON=0x...
 SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/...
 ```
 
-## 2. Basic Initialization
+## 3. Basic Initialization
 
 Initialize the SDK by choosing a role-based client. Most developers start with the `EndUserClient`.
 
@@ -30,7 +50,7 @@ const user = createEndUserClient({
 });
 ```
 
-## 3. Execute a Gasless Transaction
+## 4. Execute a Gasless Transaction
 
 Enable your users to interact with your dapp without holding native gas tokens.
 
@@ -45,7 +65,7 @@ const hash = await user.sendGaslessTransaction({
 console.log(`Transaction sent: ${hash}`);
 ```
 
-## 4. Next Steps
+## 5. Next Steps
 
 - **Manage Communities**: Use the [CommunityClient](../api/roles/community) to set reputation rules.
 - **Become a Provider**: Use the [OperatorClient](../api/roles/operator) to stake and sponsor gas.

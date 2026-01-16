@@ -4,23 +4,21 @@
 
 AAStar SDK 可通过 npm 获得。为了获得最佳体验，我们推荐使用 **pnpm**。
 
-### 使用 pnpm (推荐)
+::: code-group
 
-```bash
-pnpm add @aastar/sdk
+```bash [pnpm]
+pnpm add @aastar/sdk viem
 ```
 
-### 使用 npm
-
-```bash
-npm install @aastar/sdk
+```bash [npm]
+npm install @aastar/sdk viem
 ```
 
-### 使用 yarn
-
-```bash
-yarn add @aastar/sdk
+```bash [yarn]
+yarn add @aastar/sdk viem
 ```
+
+:::
 
 ## 独立安装包
 
