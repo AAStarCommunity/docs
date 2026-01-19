@@ -6,21 +6,9 @@ The AAStar SDK is built with TypeScript and can be used in any Node.js or browse
 
 The `@aastar/sdk` package provides the easiest entry point by grouping all core functionalities.
 
-::: code-group
-
-```bash [pnpm]
+```bash
 pnpm add @aastar/sdk viem@2.x
 ```
-
-```bash [npm]
-npm install @aastar/sdk viem@2.x
-```
-
-```bash [yarn]
-yarn add @aastar/sdk viem@2.x
-```
-
-:::
 
 ## Modular Installation (Optional)
 

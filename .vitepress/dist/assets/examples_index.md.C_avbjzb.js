@@ -1,0 +1,13 @@
+import { _ as _export_sfc, c as createElementBlock, o as openBlock, ag as createStaticVNode } from "./chunks/framework.vWx6JuJ5.js";
+const __pageData = JSON.parse('{"title":"Complete Examples Overview","description":"","frontmatter":{},"headers":[],"relativePath":"examples/index.md","filePath":"examples/index.md"}');
+const _sfc_main = { name: "examples/index.md" };
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [..._cache[0] || (_cache[0] = [
+    createStaticVNode('<h1 id="complete-examples-overview" tabindex="-1">Complete Examples Overview <a class="header-anchor" href="#complete-examples-overview" aria-label="Permalink to &quot;Complete Examples Overview&quot;">​</a></h1><p>This section contains complete, end-to-end examples of how to use the AAStar SDK for various roles and use cases.</p><h2 id="available-examples" tabindex="-1">Available Examples <a class="header-anchor" href="#available-examples" aria-label="Permalink to &quot;Available Examples&quot;">​</a></h2><ul><li><strong><a href="./operator-flow.html">Operator Flow</a></strong>: Staking and managing a SuperPaymaster.</li><li><strong><a href="./community-flow.html">Community Flow</a></strong>: Registering a community and setting up reputation rules.</li><li><strong><a href="./enduser-flow.html">End User Flow</a></strong>: Sending gasless transactions using community credit.</li><li><strong><a href="./multi-chain.html">Multi-Chain Setup</a></strong>: Configuring and using the SDK across different networks.</li></ul><h2 id="running-examples-locally" tabindex="-1">Running Examples Locally <a class="header-anchor" href="#running-examples-locally" aria-label="Permalink to &quot;Running Examples Locally&quot;">​</a></h2><p>Most examples can be run against a local Anvil instance. Ensure you have the <a href="https://github.com/AAStarCommunity/SuperPaymaster" target="_blank" rel="noreferrer">AAStar Contracts</a> deployed locally first.</p><div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">pnpm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> run</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> example:local</span></span></code></pre></div>', 7)
+  ])]);
+}
+const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export {
+  __pageData,
+  index as default
+};

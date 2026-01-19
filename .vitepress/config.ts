@@ -5,10 +5,12 @@ export default defineConfig({
   description: 'Build Your Own Protocol with Account Abstraction',
   
   lang: 'en',
-  ignoreDeadLinks: true, // Ignore dead links from synced SDK docs
+  ignoreDeadLinks: true, 
+  lastUpdated: true,
 
   themeConfig: {
     logo: '/aastar-logo.png',
+    lastUpdatedText: 'Last Updated',
     
     // Enable right sidebar (TOC)
     outline: {
@@ -18,15 +20,9 @@ export default defineConfig({
     
     nav: [
       { text: 'Guide', link: '/guide/getting-started' },
-      { text: 'API Reference', link: '/api/' },
+      { text: 'API', link: '/api/' },
       { text: 'Examples', link: '/examples/' },
-      { 
-        text: 'v0.16.6', 
-        items: [
-          { text: 'Changelog', link: '/changelog' },
-          { text: 'GitHub', link: 'https://github.com/AAStarCommunity/aastar-sdk' }
-        ]
-      }
+      { text: 'History', link: '/changelog' }
     ],
 
     sidebar: {
@@ -145,7 +141,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the MIT License. | Last Updated: 2026-01-15 09:16',
+      message: 'Released under the MIT License.',
       copyright: 'Copyright © 2023-present AAStar Community'
     },
 

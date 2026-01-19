@@ -1,19 +1,19 @@
-# AAStar SDK
-**AAStar: Empower Community, Simplify Development**
+# AAStar SDK (Mycelium Network)
+
 <p align="left">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="display:inline-block; margin-right: 10px;" />
   <img src="https://img.shields.io/badge/TypeScript-5.0-blue" alt="TypeScript" style="display:inline-block; margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/Status-0.16.6-green" alt="Status" style="display:inline-block;" />
+  <img src="https://img.shields.io/badge/Status-0.14.0-green" alt="Status" style="display:inline-block;" />
 </p>
 
-**Comprehensive Account Abstraction Infrastructure SDK - Mycelium Network Cornerstone**
-**完整的账户抽象基础设施 SDK - Mycelium 网络基石**
+**Comprehensive Account Abstraction Infrastructure SDK - Powering the Mycelium Network**
+**完整的账户抽象基础设施 SDK - 为 Mycelium 网络提供动力**
 
 ---
 
 ## 📚 Contents / 目录
 
-- [AAStar SDK](#aastar-sdk)
+- [AAStar SDK (Mycelium Network)](#aastar-sdk-mycelium-network)
   - [📚 Contents / 目录](#-contents--目录)
   - [Introduction / 简介](#introduction--简介)
     - [Core Features / 核心特性](#core-features--核心特性)
@@ -23,28 +23,8 @@
     - [End User Gasless Transaction / 终端用户 Gasless 流程](#end-user-gasless-transaction--终端用户-gasless-流程)
   - [Testing Commands / 测试命令](#testing-commands--测试命令)
     - [SDK Regression (Using SDK Clients)](#sdk-regression-using-sdk-clients)
-    - [ABI Alignment \& Coverage](#abi-alignment--coverage)
     - [Full Protocol Regression (Anvil Dedicated)](#full-protocol-regression-anvil-dedicated)
-  - [Development Guides / 开发指南](#development-guides--开发指南)
-    - [ABI Maintenance / ABI 维护](#abi-maintenance--abi-维护)
-    - [Node.js Usage / Node.js 使用](#nodejs-usage--nodejs-使用)
-  - [Development Workflow / 开发者工作流](#development-workflow--开发者工作流)
-    - [Step 1: Modify Contracts / 修改合约](#step-1-modify-contracts--修改合约)
-    - [Step 2: Local Build \& Deploy (Anvil) / 本地构建与部署](#step-2-local-build--deploy-anvil--本地构建与部署)
-    - [Step 3: Run Local Tests / 运行本地测试](#step-3-run-local-tests--运行本地测试)
-    - [Step 4: Deploy to Sepolia / 部署至 Sepolia](#step-4-deploy-to-sepolia--部署至-sepolia)
-    - [Step 5: Verify on Sepolia / Sepolia 验证](#step-5-verify-on-sepolia--sepolia-验证)
   - [Academic Research / 学术研究](#academic-research--学术研究)
-  - [API Documentation / API 文档](#api-documentation--api-文档)
-    - [📚 Complete API Reference](#-complete-api-reference)
-    - [📊 Documentation Coverage](#-documentation-coverage)
-    - [🔍 Key API Highlights](#-key-api-highlights)
-      - [Core Package (`@aastar/core`)](#core-package-aastarcore)
-      - [Account Package (`@aastar/account`)](#account-package-aastaraccount)
-      - [Paymaster Package (`@aastar/paymaster`)](#paymaster-package-aastarpaymaster)
-      - [Tokens Package (`@aastar/tokens`)](#tokens-package-aastartokens)
-    - [📝 Documentation Features](#-documentation-features)
-    - [🚀 Generate Documentation](#-generate-documentation)
   - [Support / 支援](#support--支援)
 
 ---
@@ -87,31 +67,22 @@ pnpm install @aastar/sdk @aastar/core viem
 ---
 
 ## Quick Start / 快速开始
+
 ### End User Gasless Transaction / 终端用户 Gasless 流程
 
-Recommended way using the new **PaymasterClient** API (Semantic Helpers):
-
 ```typescript
-import { PaymasterClient } from '@aastar/sdk';
+import { createEndUserClient } from '@aastar/sdk';
 
-// 1. Build CallData (e.g., Transfer Token)
-const callData = PaymasterClient.encodeExecution(
-  tokenAddress,
-  0n,
-  PaymasterClient.encodeTokenTransfer(recipient, amount)
-);
+const user = createEndUserClient({ 
+  account, 
+  paymasterUrl: 'https://paymaster.aastar.io' 
+});
 
-// 2. Submit (Auto Gas Estimation & Signing)
-const hash = await PaymasterClient.submitGaslessUserOperation(
-  client,
-  wallet,
-  aaAccount,
-  entryPoint,
-  paymasterAddress,
-  gasTokenAddress,
-  bundlerUrl,
-  callData
-);
+// Send sponsored transaction / 使用社区信用代付 Gas
+await user.sendGaslessTransaction({
+  to: TARGET_ADDR,
+  data: CALL_DATA
+});
 ```
 
 ---
@@ -121,17 +92,6 @@ const hash = await PaymasterClient.submitGaslessUserOperation(
 ### SDK Regression (Using SDK Clients)
 ```bash
 pnpm run test:full_sdk
-```
-
-### ABI Alignment & Coverage
-```bash
-# Audit ABI alignment between Registry.json and core/actions
-pnpm run audit:abi
-
-# Run unit tests with coverage report
-pnpm run test:coverage
-# or for specific packages
-pnpm exec vitest run packages --coverage
 ```
 
 
@@ -146,19 +106,6 @@ pnpm run test:full_anvil
 
 ### ABI Maintenance / ABI 维护
 - [ABI Maintenance Plan](./docs/ABI_MAINTENANCE_PLAN.md) - 合约 ABI 自动同步和维护策略
-- [ABI Change Tracking Workflow](./docs/ABI_Change_Tracking_Workflow.md) - ABI 变动追踪与 SDK 自动化审计流程
-
----
-
-### Node.js Usage / Node.js 使用
-For server-side or CLI tools needing direct private key management (e.g., `KeyManager`), use the Node-specific export:
-
-```typescript
-import { KeyManager } from '@aastar/sdk/node';
-
-// Generate or load keys securely
-const key = KeyManager.loadFromEnv('PRIVATE_KEY');
-```
 
 ---
 
@@ -212,6 +159,27 @@ cd projects/aastar-sdk
 
 ---
 
+## 📊 Gas Analytics & Reporting | Gas 分析与报表
+The SDK includes a powerful **Gas Analytics Module** for analyzing Paymaster efficiency, tracking costs, and generating industry comparison reports.
+SDK 包含一个强大的 **Gas 分析模块**，用于分析 Paymaster 效率、追踪成本并生成行业对比报告。
+
+### Quick Start | 快速开始
+Generate a real-time analysis of recent Sepolia transactions:
+生成最近 Sepolia 交易的实时分析：
+```bash
+npx tsx packages/analytics/src/gas-analyzer-v4.ts
+```
+
+### Key Features | 核心功能
+- **Double-Layer Analysis (双层分析)**: Intrinsic EVM Efficiency vs. Economic USD Costs
+- **Industry Benchmarking (行业对标)**: Compare AAStar vs. Optimism, Alchemy, Pimlico
+- **Profit Tracking (利润追踪)**: Transparent breakdown of Protocol Revenue & Profit
+- **L2 Simulation (L2 模拟)**: Estimate savings for migrating UserOps to Optimism
+
+👉 **[View Full Analytics Documentation | 查看完整分析文档](./packages/analytics/README.md)**
+
+---
+
 ## Academic Research / 学术研究
 
 The SDK supports doctoral data collection for the SuperPaymaster paper. Official experiment logger is available at `scripts/19_sdk_experiment_runner.ts`.
@@ -219,79 +187,11 @@ The SDK supports doctoral data collection for the SuperPaymaster paper. Official
 本 SDK 支撑了 SuperPaymaster 论文的博士实验数据采集。官方实验记录器位于 `scripts/19_sdk_experiment_runner.ts`。
 
 - [Stage 3 Scenario Experiment Plan](./docs/STAGE_3_SCENARIO_EXP_PLAN.md)
-
----
-
-## API Documentation / API 文档
-
-### 📚 Complete API Reference
-
-The SDK provides comprehensive TypeDoc-generated API documentation for all packages:
-
-- **📖 [Full API Documentation](../api/)** - Complete reference for all packages
-- **🌐 [Online Documentation](https://docs.aastar.io)** - Hosted documentation site
-
-### 📊 Documentation Coverage
-
-| Package | Classes | Functions | Interfaces | Types | Total APIs |
-|---------|---------|-----------|------------|-------|------------|
-| **[@aastar/core](../api/@aastar/core/)** | 7 | 51 | 14 | 20 | **92+** |
-| **[@aastar/account](../api/@aastar/account/)** | 1 | 4 | 2 | 2 | **9** |
-| **[@aastar/paymaster](../api/@aastar/paymaster/)** | 4 | 7 | 4 | 4 | **19** |
-| **[@aastar/tokens](../api/@aastar/tokens/)** | 1 | 15+ | - | - | **16+** |
-| **Total** | **13** | **77+** | **20+** | **26+** | **136+** |
-
-### 🔍 Key API Highlights
-
-#### Core Package (`@aastar/core`)
-- **Configuration Management**: `ContractConfigManager`, `getNetwork()`, `getRpcUrl()`
-- **Role System**: 7 role constants with complete requirements and permissions
-- **Actions**: Registry, Staking, SBT, SuperPaymaster, Token, EntryPoint actions
-- **Validation**: `RequirementChecker`, `StateValidator`, `AAStarValidationError`
-- **Client Base**: `BaseClient` with full viem integration
-
-#### Account Package (`@aastar/account`)
-- **User Operations**: `UserOpClient` for AA account management
-- **Account Creation**: `createEOAWalletClient()`, `toSimpleSmartAccount()`
-- **Utilities**: `getUserOpHash()`, `packUserOpLimits()`
-
-#### Paymaster Package (`@aastar/paymaster`)
-- **Clients**: `PaymasterClient`, `SuperPaymasterClient`, `SuperPaymasterAdminClient`, `PaymasterOperator`
-- **Middleware**: `getPaymasterV4Middleware()`, `getSuperPaymasterMiddleware()`
-- **Utilities**: `checkEligibility()`, `buildPaymasterData()`, `buildSuperPaymasterData()`
-
-#### Tokens Package (`@aastar/tokens`)
-- **Finance Client**: `FinanceClient` with 15+ token operation methods
-- **GToken Operations**: Balance queries, staking, unstaking, rewards
-- **aPNTs Operations**: Minting, burning, wrapping, balance management
-- **Tokenomics**: `getTokenomicsOverview()`, `getCirculatingSupply()`
-
-### 📝 Documentation Features
-
-✅ **Zero Warnings**: Clean documentation generation with no TypeDoc warnings  
-✅ **100% Accuracy**: All API docs verified against source code  
-✅ **Complete Coverage**: All exported APIs documented with types, parameters, and examples  
-✅ **Rich Metadata**: JSDoc comments, usage examples, and source code links  
-✅ **Auto-Generated**: Synchronized with latest codebase via `pnpm run docs:generate`
-
-### 🚀 Generate Documentation
-
-```bash
-# Generate API documentation
-pnpm run docs:generate
-
-# Sync to documentation repository
-pnpm run docs:sync
-```
+- [Reputation-to-Credit Mapping Whitepaper](./docs/Reputation-to-Credit_Mapping_Whitepaper.md) - 声誉与信用体系映射技术白皮书
 
 ---
 
 ## Support / 支援
-
-**⭐ If you find this project helpful, please consider giving us a star on GitHub!**  
-**如果您觉得这个项目有帮助，请在 GitHub 上给我们一个 Star！**
-
-[![GitHub stars](https://img.shields.io/github/stars/AAStarCommunity/aastar-sdk?style=social)](https://github.com/AAStarCommunity/aastar-sdk)
 
 - **Documentation**: [docs.aastar.io](https://docs.aastar.io)
 - **GitHub**: [AAStarCommunity/aastar-sdk](https://github.com/AAStarCommunity/aastar-sdk)

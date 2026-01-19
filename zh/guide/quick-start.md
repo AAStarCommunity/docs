@@ -4,23 +4,9 @@
 
 ## 第一步：安装 SDK
 
-使用你偏好的包管理器安装 AAStar SDK 及其同级依赖 `viem`：
-
-::: code-group
-
-```bash [pnpm]
+```bash
 pnpm add @aastar/sdk viem
 ```
-
-```bash [npm]
-npm install @aastar/sdk viem
-```
-
-```bash [yarn]
-yarn add @aastar/sdk viem
-```
-
-:::
 
 ## 第二步：设置环境
 
