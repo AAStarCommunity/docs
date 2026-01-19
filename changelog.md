@@ -1,99 +1,43 @@
 # Changelog
 
-## Latest Releases
+All notable changes to this project will be documented in this file.
 
-View all releases and changelogs on GitHub:
+## [0.16.11] - 2026-01-19
 
-**[📦 View All Releases →](https://github.com/AAStarCommunity/aastar-sdk/releases)**
+### 📊 Gas Analytics & Reporting (New Package)
+- **[NEW]** Added `@aastar/analytics` package for comprehensive gas analysis.
+- **[FEATURE]** `CostCalculator`: Calculates true L1/L2 gas costs, protocol profit (10% premium + buffer), and user savings.
+- **[FEATURE]** `AttributionAnalyzer`: Simulates L2 costs (Optimism model) to provide "Apple-to-Apple" competitiveness comparisons.
+- **[REPORT]** `gas-analyzer-v4.ts`: Generates detailed reports showing ~28% protocol profit margin and ~400x savings vs. Ethereum L1.
 
-**[🏷️ View All Tags →](https://github.com/AAStarCommunity/aastar-sdk/tags)**
+### SDK & Core Enhancements
+- **[FIX]** **Anni Gasless Fix**: Updated `l4-setup.ts` to use `updatePriceDVT` for refreshing stale SuperPaymaster price cache, preventing "UserOperation expired" errors.
+- **[FIX]** **Duplicate Build Fix**: Resolved merge conflicts and duplicate identifiers in `packages/core` actions (e.g., `contracts.ts`, `actions/index.ts`).
+- **[FIX]** **Build System**: Removed residual `*.test.ts` files in modification directories to ensure clean `tsc` builds.
 
----
+### Regression & Testing
+- **[IMPROVED]** `L4 Regression`: Full automation for Setup -> Funding -> Gasless Transactions -> Analytics.
+- **[FEATURE]** `DVT Price Update`: Integrated DVT signature generation in test setup to simulate authenticated price updates.
 
-## Recent Updates
+- **[BREAKING]** Decoupled development and production build configurations.
+  - Added `tsconfig.build.json` for strictly clean production builds (`pnpm build`).
+  - Updated root `tsconfig.json` to retain `paths` mappings for rapid development (`tsx`).
+  - Updated all `packages/*/tsconfig.json` to extend the build configuration.
+- Fixed `packages/core` build output to correctly generate type definitions (`.d.ts`).
 
-### v0.16.6 (Latest)
-**Date**: 2026-01-15
+### SDK Core (`@aastar/core`)
+- **[CHANGED]** `BaseClient` visibility update.
+  - Changed `client` and `getStartPublicClient` from `protected` to `public` to allow easier extension and debugging in consuming applications.
+- **[Check]** Standardized ABI exports.
+  - Updated `abis/index.ts` to support both array-based and object-based (`{ abi: [] }`) ABI JSON formats, resolving compatibility issues with external artifacts.
 
-**Major Changes**:
-- ✅ Complete API documentation overhaul
-- ✅ Add all 8 packages to TypeDoc (core, account, paymaster, tokens, analytics, dapp, identity, sdk)
-- ✅ Fix TypeScript rootDir issues in sdk and dapp packages
-- ✅ Document package structure and dependencies
-- ✅ Add comprehensive API README with developer levels
-- ✅ Re-export tokenActions from @aastar/tokens for developer convenience
+### SDK Operator (`@aastar/operator`)
+- **[FIXED]** ABI Property Access.
+  - Fixed runtime error where `PaymasterOperatorClient` attempted to access `.abi` on a raw ABI array. Now uses the standardized `PaymasterABI` export.
 
-**Documentation**:
-- Added detailed package descriptions for all 8 packages
-- Created developer level classification (Low-Level, High-Level, Frontend)
-- Added Token Operations guide with 80+ functions
-- Improved code examples and usage patterns
+### SDK EndUser (`@aastar/enduser`)
+- **[FIXED]** `UserClient` build failure due to `BaseClient` visibility issues.
 
-**Bug Fixes**:
-- Fixed missing token operations in @aastar/tokens package
-- Resolved VitePress routing issues
-- Fixed broken links in documentation
-
-[View Full Release Notes →](https://github.com/AAStarCommunity/aastar-sdk/releases/tag/v0.16.6)
-
----
-
-### v0.16.5
-**Date**: 2026-01-13
-
-**Changes**:
-- SDK refactoring and enhancement
-- Improved error handling (`AAStarError`, `SDKResult`)
-- Testing infrastructure updates with vitest
-- Role-based client improvements
-
-[View Full Release Notes →](https://github.com/AAStarCommunity/aastar-sdk/releases/tag/v0.16.5)
-
----
-
-### v0.16.4
-**Date**: 2026-01-11
-
-**Changes**:
-- Multi-network logic refinement
-- L4 test idempotency improvements
-- Network-specific test execution
-
-[View Full Release Notes →](https://github.com/AAStarCommunity/aastar-sdk/releases/tag/v0.16.4)
-
----
-
-### v0.16.3
-**Date**: 2026-01-10
-
-**Changes**:
-- Paymaster role migration
-- Registry update evaluation
-- Security enhancements
-
-[View Full Release Notes →](https://github.com/AAStarCommunity/aastar-sdk/releases/tag/v0.16.3)
-
----
-
-## Version History
-
-For complete version history, see:
-
-**[📚 All Releases →](https://github.com/AAStarCommunity/aastar-sdk/releases)**
-
----
-
-## Contributing
-
-Found a bug or have a feature request? Please open an issue on GitHub:
-
-**[🐛 Report Issues →](https://github.com/AAStarCommunity/aastar-sdk/issues)**
-
-**[💡 Request Features →](https://github.com/AAStarCommunity/aastar-sdk/issues/new?template=feature_request.md)**
-
----
-
-## Stay Updated
-
-- ⭐ Star the repository: [AAStarCommunity/aastar-sdk](https://github.com/AAStarCommunity/aastar-sdk)
-- 👀 Watch for releases to get notified
+### Testing & Regression
+- **[ADDED]** `run_sdk_regression.sh` now supports a strict `sepolia` environment mode with correct `.env` loading (`set -a`).
+- **[ADDED]** `extract_v3_abis.sh` integration for reliable ABI synchronization from the SuperPaymaster project.
