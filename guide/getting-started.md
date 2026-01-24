@@ -198,7 +198,7 @@ npx tsx packages/analytics/src/gas-analyzer-v4.ts
 - **Profit Tracking**: Transparent breakdown of Protocol Revenue & Profit
 - **L2 Simulation**: Estimate savings for migrating UserOps to Optimism
 
-👉 **[View Full Analytics Documentation](./packages/analytics/README.md)**
+👉 **[View Full Analytics Documentation](/api/@aastar/analytics/)**
 
 ---
 
@@ -218,9 +218,11 @@ The SDK supports doctoral data collection for the SuperPaymaster paper. Official
 
 MIT © AAStar Community
 
+---
+
 ## Verified Contracts (Current Deployment)
 
 The following contract addresses have been successfully verified on their respective testnets as of January 24, 2026.
 
-- [Sepolia Verified Contracts](./docs/verify.sepolia.contracts.md)
-- [Optimism Sepolia Verified Contracts](./docs/verify.op-sepolia.contracts.md)
+- [Sepolia Verified Contracts](/guide/deployments/verify.sepolia.contracts)
+- [Optimism Sepolia Verified Contracts](/guide/deployments/verify.op-sepolia.contracts)
