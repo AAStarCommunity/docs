@@ -1,18 +1,15 @@
 > **createAAStarPublicClient**(`rpcUrl`, `chain`): `object`
 
-Defined in: [packages/core/src/clients.ts:8](https://github.com/AAStarCommunity/aastar-sdk/blob/6388ef6d7c1f0b08255a8800bb272255cd49bb47/packages/core/src/clients.ts#L8)
+Defined in: [packages/core/src/clients.ts:8](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/core/src/clients.ts#L8)
 
 Creates a standard AAStar public client for any given chain.
 
 ## Parameters
 
-### rpcUrl
-
-`string`
-
-### chain
-
-[`Chain`](https://viem.sh/docs/index.html) = `sepolia`
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `rpcUrl` | `string` | `undefined` |
+| `chain` | [`Chain`](https://viem.sh/docs/index.html) | `sepolia` |
 
 ## Returns
 
@@ -57,9 +54,9 @@ Executes a new message call immediately without submitting a transaction to the 
 
 #### Parameters
 
-##### parameters
-
-[`CallParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`\>
+| Parameter | Type |
+| ------ | ------ |
+| `parameters` | [`CallParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`\> |
 
 #### Returns
 
@@ -113,9 +110,9 @@ Creates an EIP-2930 access list that you can include in a transaction.
 
 #### Parameters
 
-##### parameters
-
-[`CreateAccessListParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`\>
+| Parameter | Type |
+| ------ | ------ |
+| `parameters` | [`CreateAccessListParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`\> |
 
 #### Returns
 
@@ -179,37 +176,20 @@ Creates a Filter to retrieve event logs that can be used with [`getFilterChanges
 
 #### Type Parameters
 
-##### abi
-
-`abi` *extends* readonly `unknown`[] \| `Abi`
-
-##### eventName
-
-`eventName` *extends* `string` \| `undefined`
-
-##### args
-
-`args` *extends* readonly `unknown`[] \| `Record`\<`string`, `unknown`\> \| `undefined`
-
-##### strict
-
-`strict` *extends* `boolean` \| `undefined` = `undefined`
-
-##### fromBlock
-
-`fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
-
-##### toBlock
-
-`toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `abi` *extends* readonly `unknown`[] \| `Abi` | - |
+| `eventName` *extends* `string` \| `undefined` | - |
+| `args` *extends* readonly `unknown`[] \| `Record`\<`string`, `unknown`\> \| `undefined` | - |
+| `strict` *extends* `boolean` \| `undefined` | `undefined` |
+| `fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
+| `toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args
-
-[`CreateContractEventFilterParameters`](https://viem.sh/docs/index.html)\<`abi`, `eventName`, `args`, `strict`, `fromBlock`, `toBlock`\>
-
-[CreateContractEventFilterParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`CreateContractEventFilterParameters`](https://viem.sh/docs/index.html)\<`abi`, `eventName`, `args`, `strict`, `fromBlock`, `toBlock`\> | [CreateContractEventFilterParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -243,41 +223,21 @@ Creates a [`Filter`](https://viem.sh/docs/glossary/types#filter) to listen for n
 
 #### Type Parameters
 
-##### abiEvent
-
-`abiEvent` *extends* `AbiEvent` \| `undefined` = `undefined`
-
-##### abiEvents
-
-`abiEvents` *extends* readonly `unknown`[] \| readonly `AbiEvent`[] \| `undefined` = `abiEvent` *extends* `AbiEvent` ? \[`abiEvent`\<`abiEvent`\>\] : `undefined`
-
-##### strict
-
-`strict` *extends* `boolean` \| `undefined` = `undefined`
-
-##### fromBlock
-
-`fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
-
-##### toBlock
-
-`toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
-
-##### _EventName
-
-`_EventName` *extends* `string` \| `undefined` = [`MaybeAbiEventName`](https://viem.sh/docs/index.html)\<`abiEvent`\>
-
-##### _Args
-
-`_Args` *extends* readonly `unknown`[] \| `Record`\<`string`, `unknown`\> \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `abiEvent` *extends* `AbiEvent` \| `undefined` | `undefined` |
+| `abiEvents` *extends* readonly `unknown`[] \| readonly `AbiEvent`[] \| `undefined` | `abiEvent` *extends* `AbiEvent` ? \[`abiEvent`\<`abiEvent`\>\] : `undefined` |
+| `strict` *extends* `boolean` \| `undefined` | `undefined` |
+| `fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
+| `toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
+| `_EventName` *extends* `string` \| `undefined` | [`MaybeAbiEventName`](https://viem.sh/docs/index.html)\<`abiEvent`\> |
+| `_Args` *extends* readonly `unknown`[] \| `Record`\<`string`, `unknown`\> \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args?
-
-[`CreateEventFilterParameters`](https://viem.sh/docs/index.html)\<`abiEvent`, `abiEvents`, `strict`, `fromBlock`, `toBlock`, `_EventName`, `_Args`\>
-
-[CreateEventFilterParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args?` | [`CreateEventFilterParameters`](https://viem.sh/docs/index.html)\<`abiEvent`, `abiEvents`, `strict`, `fromBlock`, `toBlock`, `_EventName`, `_Args`\> | [CreateEventFilterParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -339,29 +299,18 @@ Estimates the gas required to successfully execute a contract write function cal
 
 #### Type Parameters
 
-##### chain
-
-`chain` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined`
-
-##### abi
-
-`abi` *extends* readonly `unknown`[] \| `Abi`
-
-##### functionName
-
-`functionName` *extends* `string`
-
-##### args
-
-`args` *extends* `unknown`
+| Type Parameter |
+| ------ |
+| `chain` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined` |
+| `abi` *extends* readonly `unknown`[] \| `Abi` |
+| `functionName` *extends* `string` |
+| `args` *extends* `unknown` |
 
 #### Parameters
 
-##### args
-
-[`EstimateContractGasParameters`](https://viem.sh/docs/index.html)\<`abi`, `functionName`, `args`, `chain`\>
-
-[EstimateContractGasParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`EstimateContractGasParameters`](https://viem.sh/docs/index.html)\<`abi`, `functionName`, `args`, `chain`\> | [EstimateContractGasParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -402,19 +351,16 @@ in the next block.
 
 #### Type Parameters
 
-##### chainOverride
-
-`chainOverride` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
-
-##### type
-
-`type` *extends* [`FeeValuesType`](https://viem.sh/docs/index.html) = `"eip1559"`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `chainOverride` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
+| `type` *extends* [`FeeValuesType`](https://viem.sh/docs/index.html) | `"eip1559"` |
 
 #### Parameters
 
-##### args?
-
-[`EstimateFeesPerGasParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`, `chainOverride`, `type`\>
+| Parameter | Type |
+| ------ | ------ |
+| `args?` | [`EstimateFeesPerGasParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`, `chainOverride`, `type`\> |
 
 #### Returns
 
@@ -447,11 +393,9 @@ Estimates the gas necessary to complete a transaction without submitting it to t
 
 #### Parameters
 
-##### args
-
-[`EstimateGasParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`\>
-
-[EstimateGasParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`EstimateGasParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`\> | [EstimateGasParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -487,17 +431,16 @@ to be included in the next block.
 
 #### Type Parameters
 
-##### chainOverride
-
-`chainOverride` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `chainOverride` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args?
-
-###### chain
-
-`chainOverride` \| `null`
+| Parameter | Type |
+| ------ | ------ |
+| `args?` | \{ `chain`: `chainOverride` \| `null`; \} |
+| `args.chain?` | `chainOverride` \| `null` |
 
 #### Returns
 
@@ -531,15 +474,15 @@ Default block tag to use for RPC requests.
 
 #### Type Parameters
 
-##### client
-
-`client` *extends* `object` & [`ExactPartial`](https://viem.sh/docs/index.html)\<[`ExtendableProtectedActions`](https://viem.sh/docs/index.html)\<[`Transport`](https://viem.sh/docs/index.html), [`Chain`](https://viem.sh/docs/index.html) \| `undefined`, `undefined`\>\>
+| Type Parameter |
+| ------ |
+| `client` *extends* `object` & [`ExactPartial`](https://viem.sh/docs/index.html)\<[`ExtendableProtectedActions`](https://viem.sh/docs/index.html)\<[`Transport`](https://viem.sh/docs/index.html), [`Chain`](https://viem.sh/docs/index.html) \| `undefined`, `undefined`\>\> |
 
 #### Parameters
 
-##### fn
-
-(`client`) => `client`
+| Parameter | Type |
+| ------ | ------ |
+| `fn` | (`client`) => `client` |
 
 #### Returns
 
@@ -555,19 +498,16 @@ Fills a transaction request with the necessary fields to be signed over.
 
 #### Type Parameters
 
-##### chainOverride
-
-`chainOverride` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
-
-##### accountOverride
-
-`accountOverride` *extends* `` `0x${string}` `` \| [`Account`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `chainOverride` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
+| `accountOverride` *extends* `` `0x${string}` `` \| [`Account`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args
-
-[`FillTransactionParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`, [`Account`](https://viem.sh/docs/index.html) \| `undefined`, `chainOverride`, `accountOverride`\>
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`FillTransactionParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`, [`Account`](https://viem.sh/docs/index.html) \| `undefined`, `chainOverride`, `accountOverride`\> |
 
 #### Returns
 
@@ -603,11 +543,9 @@ Returns the balance of an address in wei.
 
 #### Parameters
 
-##### args
-
-[`GetBalanceParameters`](https://viem.sh/docs/index.html)
-
-[GetBalanceParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`GetBalanceParameters`](https://viem.sh/docs/index.html) | [GetBalanceParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -687,21 +625,16 @@ Returns information about a block at a block number, hash, or tag.
 
 #### Type Parameters
 
-##### includeTransactions
-
-`includeTransactions` *extends* `boolean` = `false`
-
-##### blockTag
-
-`blockTag` *extends* [`BlockTag`](https://viem.sh/docs/index.html) = `"latest"`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `includeTransactions` *extends* `boolean` | `false` |
+| `blockTag` *extends* [`BlockTag`](https://viem.sh/docs/index.html) | `"latest"` |
 
 #### Parameters
 
-##### args?
-
-[`GetBlockParameters`](https://viem.sh/docs/index.html)\<`includeTransactions`, `blockTag`\>
-
-[GetBlockParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args?` | [`GetBlockParameters`](https://viem.sh/docs/index.html)\<`includeTransactions`, `blockTag`\> | [GetBlockParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -734,11 +667,9 @@ Returns the number of the most recent block seen.
 
 #### Parameters
 
-##### args?
-
-[`GetBlockNumberParameters`](https://viem.sh/docs/index.html)
-
-[GetBlockNumberParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args?` | [`GetBlockNumberParameters`](https://viem.sh/docs/index.html) | [GetBlockNumberParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -773,11 +704,9 @@ Returns the number of Transactions at a block number, hash, or tag.
 
 #### Parameters
 
-##### args?
-
-[`GetBlockTransactionCountParameters`](https://viem.sh/docs/index.html)
-
-[GetBlockTransactionCountParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args?` | [`GetBlockTransactionCountParameters`](https://viem.sh/docs/index.html) | [GetBlockTransactionCountParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -804,9 +733,9 @@ const count = await client.getBlockTransactionCount()
 
 #### Parameters
 
-##### args
-
-[`GetCodeParameters`](https://viem.sh/docs/index.html)
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`GetCodeParameters`](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -856,11 +785,9 @@ Retrieves the bytecode at an address.
 
 #### Parameters
 
-##### args
-
-[`GetCodeParameters`](https://viem.sh/docs/index.html)
-
-GetBytecodeParameters
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`GetCodeParameters`](https://viem.sh/docs/index.html) | GetBytecodeParameters |
 
 #### Returns
 
@@ -894,31 +821,19 @@ Returns a list of event logs emitted by a contract.
 
 #### Type Parameters
 
-##### abi
-
-`abi` *extends* readonly `unknown`[] \| `Abi`
-
-##### eventName
-
-`eventName` *extends* `string` \| `undefined` = `undefined`
-
-##### strict
-
-`strict` *extends* `boolean` \| `undefined` = `undefined`
-
-##### fromBlock
-
-`fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
-
-##### toBlock
-
-`toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `abi` *extends* readonly `unknown`[] \| `Abi` | - |
+| `eventName` *extends* `string` \| `undefined` | `undefined` |
+| `strict` *extends* `boolean` \| `undefined` | `undefined` |
+| `fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
+| `toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args
-
-[`GetContractEventsParameters`](https://viem.sh/docs/index.html)\<`abi`, `eventName`, `strict`, `fromBlock`, `toBlock`\>
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`GetContractEventsParameters`](https://viem.sh/docs/index.html)\<`abi`, `eventName`, `strict`, `fromBlock`, `toBlock`\> |
 
 #### Returns
 
@@ -952,9 +867,9 @@ Reads the EIP-712 domain from a contract, based on the ERC-5267 specification.
 
 #### Parameters
 
-##### args
-
-[`GetEip712DomainParameters`](https://viem.sh/docs/index.html)
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`GetEip712DomainParameters`](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -999,71 +914,16 @@ Gets address for ENS name.
 
 #### Parameters
 
-##### args
-
-[GetEnsAddressParameters](https://viem.sh/docs/index.html)
-
-###### blockNumber?
-
-`bigint`
-
-The balance of the account at a block number.
-
-###### blockTag?
-
-[`BlockTag`](https://viem.sh/docs/index.html)
-
-The balance of the account at a block tag.
-
-**Default**
-
-```ts
-'latest'
-```
-
-###### coinType?
-
-`bigint`
-
-ENSIP-9 compliant coinType (chain) to get ENS address for.
-
-To get the `coinType` for a chain id, use the `toCoinType` function:
-```ts
-import { toCoinType } from 'viem'
-import { base } from 'viem/chains'
-
-const coinType = toCoinType(base.id)
-```
-
-**Default**
-
-```ts
-60n
-```
-
-###### gatewayUrls?
-
-`string`[]
-
-Universal Resolver gateway URLs to use for resolving CCIP-read requests.
-
-###### name
-
-`string`
-
-Name to get the address for.
-
-###### strict?
-
-`boolean`
-
-Whether or not to throw errors propagated from the ENS Universal Resolver Contract.
-
-###### universalResolverAddress?
-
-`` `0x${string}` ``
-
-Address of ENS Universal Resolver Contract.
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | \{ `blockNumber?`: `bigint`; `blockTag?`: [`BlockTag`](https://viem.sh/docs/index.html); `coinType?`: `bigint`; `gatewayUrls?`: `string`[]; `name`: `string`; `strict?`: `boolean`; `universalResolverAddress?`: `` `0x${string}` ``; \} | [GetEnsAddressParameters](https://viem.sh/docs/index.html) |
+| `args.blockNumber?` | `bigint` | The balance of the account at a block number. |
+| `args.blockTag?` | [`BlockTag`](https://viem.sh/docs/index.html) | The balance of the account at a block tag. **Default** `'latest'` |
+| `args.coinType?` | `bigint` | ENSIP-9 compliant coinType (chain) to get ENS address for. To get the `coinType` for a chain id, use the `toCoinType` function: `import { toCoinType } from 'viem' import { base } from 'viem/chains' const coinType = toCoinType(base.id)` **Default** `60n` |
+| `args.gatewayUrls?` | `string`[] | Universal Resolver gateway URLs to use for resolving CCIP-read requests. |
+| `args.name` | `string` | Name to get the address for. |
+| `args.strict?` | `boolean` | Whether or not to throw errors propagated from the ENS Universal Resolver Contract. |
+| `args.universalResolverAddress?` | `` `0x${string}` `` | Address of ENS Universal Resolver Contract. |
 
 #### Returns
 
@@ -1105,57 +965,16 @@ Gets the avatar of an ENS name.
 
 #### Parameters
 
-##### args
-
-[GetEnsAvatarParameters](https://viem.sh/docs/index.html)
-
-###### assetGatewayUrls?
-
-[`AssetGatewayUrls`](https://viem.sh/docs/index.html)
-
-Gateway urls to resolve IPFS and/or Arweave assets.
-
-###### blockNumber?
-
-`bigint`
-
-The balance of the account at a block number.
-
-###### blockTag?
-
-[`BlockTag`](https://viem.sh/docs/index.html)
-
-The balance of the account at a block tag.
-
-**Default**
-
-```ts
-'latest'
-```
-
-###### gatewayUrls?
-
-`string`[]
-
-Universal Resolver gateway URLs to use for resolving CCIP-read requests.
-
-###### name
-
-`string`
-
-ENS name to get Text for.
-
-###### strict?
-
-`boolean`
-
-Whether or not to throw errors propagated from the ENS Universal Resolver Contract.
-
-###### universalResolverAddress?
-
-`` `0x${string}` ``
-
-Address of ENS Universal Resolver Contract.
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | \{ `assetGatewayUrls?`: [`AssetGatewayUrls`](https://viem.sh/docs/index.html); `blockNumber?`: `bigint`; `blockTag?`: [`BlockTag`](https://viem.sh/docs/index.html); `gatewayUrls?`: `string`[]; `name`: `string`; `strict?`: `boolean`; `universalResolverAddress?`: `` `0x${string}` ``; \} | [GetEnsAvatarParameters](https://viem.sh/docs/index.html) |
+| `args.assetGatewayUrls?` | [`AssetGatewayUrls`](https://viem.sh/docs/index.html) | Gateway urls to resolve IPFS and/or Arweave assets. |
+| `args.blockNumber?` | `bigint` | The balance of the account at a block number. |
+| `args.blockTag?` | [`BlockTag`](https://viem.sh/docs/index.html) | The balance of the account at a block tag. **Default** `'latest'` |
+| `args.gatewayUrls?` | `string`[] | Universal Resolver gateway URLs to use for resolving CCIP-read requests. |
+| `args.name` | `string` | ENS name to get Text for. |
+| `args.strict?` | `boolean` | Whether or not to throw errors propagated from the ENS Universal Resolver Contract. |
+| `args.universalResolverAddress?` | `` `0x${string}` `` | Address of ENS Universal Resolver Contract. |
 
 #### Returns
 
@@ -1197,71 +1016,16 @@ Gets primary name for specified address.
 
 #### Parameters
 
-##### args
-
-[GetEnsNameParameters](https://viem.sh/docs/index.html)
-
-###### address
-
-`` `0x${string}` ``
-
-Address to get ENS name for.
-
-###### blockNumber?
-
-`bigint`
-
-The balance of the account at a block number.
-
-###### blockTag?
-
-[`BlockTag`](https://viem.sh/docs/index.html)
-
-The balance of the account at a block tag.
-
-**Default**
-
-```ts
-'latest'
-```
-
-###### coinType?
-
-`bigint`
-
-ENSIP-9 compliant coinType (chain) to get ENS name for.
-
-To get the `coinType` for a chain id, use the `toCoinType` function:
-```ts
-import { toCoinType } from 'viem'
-import { base } from 'viem/chains'
-
-const coinType = toCoinType(base.id)
-```
-
-**Default**
-
-```ts
-60n
-```
-
-###### gatewayUrls?
-
-`string`[]
-
-Universal Resolver gateway URLs to use for resolving CCIP-read requests.
-
-###### strict?
-
-`boolean`
-
-Whether or not to throw errors propagated from the ENS Universal Resolver Contract.
-
-###### universalResolverAddress?
-
-`` `0x${string}` ``
-
-Address of ENS Universal Resolver Contract.
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | \{ `address`: `` `0x${string}` ``; `blockNumber?`: `bigint`; `blockTag?`: [`BlockTag`](https://viem.sh/docs/index.html); `coinType?`: `bigint`; `gatewayUrls?`: `string`[]; `strict?`: `boolean`; `universalResolverAddress?`: `` `0x${string}` ``; \} | [GetEnsNameParameters](https://viem.sh/docs/index.html) |
+| `args.address` | `` `0x${string}` `` | Address to get ENS name for. |
+| `args.blockNumber?` | `bigint` | The balance of the account at a block number. |
+| `args.blockTag?` | [`BlockTag`](https://viem.sh/docs/index.html) | The balance of the account at a block tag. **Default** `'latest'` |
+| `args.coinType?` | `bigint` | ENSIP-9 compliant coinType (chain) to get ENS name for. To get the `coinType` for a chain id, use the `toCoinType` function: `import { toCoinType } from 'viem' import { base } from 'viem/chains' const coinType = toCoinType(base.id)` **Default** `60n` |
+| `args.gatewayUrls?` | `string`[] | Universal Resolver gateway URLs to use for resolving CCIP-read requests. |
+| `args.strict?` | `boolean` | Whether or not to throw errors propagated from the ENS Universal Resolver Contract. |
+| `args.universalResolverAddress?` | `` `0x${string}` `` | Address of ENS Universal Resolver Contract. |
 
 #### Returns
 
@@ -1300,39 +1064,13 @@ Gets resolver for ENS name.
 
 #### Parameters
 
-##### args
-
-[GetEnsResolverParameters](https://viem.sh/docs/index.html)
-
-###### blockNumber?
-
-`bigint`
-
-The balance of the account at a block number.
-
-###### blockTag?
-
-[`BlockTag`](https://viem.sh/docs/index.html)
-
-The balance of the account at a block tag.
-
-**Default**
-
-```ts
-'latest'
-```
-
-###### name
-
-`string`
-
-Name to get the address for.
-
-###### universalResolverAddress?
-
-`` `0x${string}` ``
-
-Address of ENS Universal Resolver Contract.
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | \{ `blockNumber?`: `bigint`; `blockTag?`: [`BlockTag`](https://viem.sh/docs/index.html); `name`: `string`; `universalResolverAddress?`: `` `0x${string}` ``; \} | [GetEnsResolverParameters](https://viem.sh/docs/index.html) |
+| `args.blockNumber?` | `bigint` | The balance of the account at a block number. |
+| `args.blockTag?` | [`BlockTag`](https://viem.sh/docs/index.html) | The balance of the account at a block tag. **Default** `'latest'` |
+| `args.name` | `string` | Name to get the address for. |
+| `args.universalResolverAddress?` | `` `0x${string}` `` | Address of ENS Universal Resolver Contract. |
 
 #### Returns
 
@@ -1374,57 +1112,16 @@ Gets a text record for specified ENS name.
 
 #### Parameters
 
-##### args
-
-[GetEnsTextParameters](https://viem.sh/docs/index.html)
-
-###### blockNumber?
-
-`bigint`
-
-The balance of the account at a block number.
-
-###### blockTag?
-
-[`BlockTag`](https://viem.sh/docs/index.html)
-
-The balance of the account at a block tag.
-
-**Default**
-
-```ts
-'latest'
-```
-
-###### gatewayUrls?
-
-`string`[]
-
-Universal Resolver gateway URLs to use for resolving CCIP-read requests.
-
-###### key
-
-`string`
-
-Text record to retrieve.
-
-###### name
-
-`string`
-
-ENS name to get Text for.
-
-###### strict?
-
-`boolean`
-
-Whether or not to throw errors propagated from the ENS Universal Resolver Contract.
-
-###### universalResolverAddress?
-
-`` `0x${string}` ``
-
-Address of ENS Universal Resolver Contract.
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | \{ `blockNumber?`: `bigint`; `blockTag?`: [`BlockTag`](https://viem.sh/docs/index.html); `gatewayUrls?`: `string`[]; `key`: `string`; `name`: `string`; `strict?`: `boolean`; `universalResolverAddress?`: `` `0x${string}` ``; \} | [GetEnsTextParameters](https://viem.sh/docs/index.html) |
+| `args.blockNumber?` | `bigint` | The balance of the account at a block number. |
+| `args.blockTag?` | [`BlockTag`](https://viem.sh/docs/index.html) | The balance of the account at a block tag. **Default** `'latest'` |
+| `args.gatewayUrls?` | `string`[] | Universal Resolver gateway URLs to use for resolving CCIP-read requests. |
+| `args.key` | `string` | Text record to retrieve. |
+| `args.name` | `string` | ENS name to get Text for. |
+| `args.strict?` | `boolean` | Whether or not to throw errors propagated from the ENS Universal Resolver Contract. |
+| `args.universalResolverAddress?` | `` `0x${string}` `` | Address of ENS Universal Resolver Contract. |
 
 #### Returns
 
@@ -1467,11 +1164,9 @@ Returns a collection of historical gas information.
 
 #### Parameters
 
-##### args
-
-[`GetFeeHistoryParameters`](https://viem.sh/docs/index.html)
-
-[GetFeeHistoryParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`GetFeeHistoryParameters`](https://viem.sh/docs/index.html) | [GetFeeHistoryParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -1506,37 +1201,20 @@ Returns a list of logs or hashes based on a [Filter](/docs/glossary/terms#filter
 
 #### Type Parameters
 
-##### filterType
-
-`filterType` *extends* [`FilterType`](https://viem.sh/docs/index.html)
-
-##### abi
-
-`abi` *extends* readonly `unknown`[] \| `Abi` \| `undefined`
-
-##### eventName
-
-`eventName` *extends* `string` \| `undefined`
-
-##### strict
-
-`strict` *extends* `boolean` \| `undefined` = `undefined`
-
-##### fromBlock
-
-`fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
-
-##### toBlock
-
-`toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `filterType` *extends* [`FilterType`](https://viem.sh/docs/index.html) | - |
+| `abi` *extends* readonly `unknown`[] \| `Abi` \| `undefined` | - |
+| `eventName` *extends* `string` \| `undefined` | - |
+| `strict` *extends* `boolean` \| `undefined` | `undefined` |
+| `fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
+| `toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args
-
-[`GetFilterChangesParameters`](https://viem.sh/docs/index.html)\<`filterType`, `abi`, `eventName`, `strict`, `fromBlock`, `toBlock`\>
-
-[GetFilterChangesParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`GetFilterChangesParameters`](https://viem.sh/docs/index.html)\<`filterType`, `abi`, `eventName`, `strict`, `fromBlock`, `toBlock`\> | [GetFilterChangesParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -1631,33 +1309,19 @@ Returns a list of event logs since the filter was created.
 
 #### Type Parameters
 
-##### abi
-
-`abi` *extends* readonly `unknown`[] \| `Abi` \| `undefined`
-
-##### eventName
-
-`eventName` *extends* `string` \| `undefined`
-
-##### strict
-
-`strict` *extends* `boolean` \| `undefined` = `undefined`
-
-##### fromBlock
-
-`fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
-
-##### toBlock
-
-`toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `abi` *extends* readonly `unknown`[] \| `Abi` \| `undefined` | - |
+| `eventName` *extends* `string` \| `undefined` | - |
+| `strict` *extends* `boolean` \| `undefined` | `undefined` |
+| `fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
+| `toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args
-
-[`GetFilterLogsParameters`](https://viem.sh/docs/index.html)\<`abi`, `eventName`, `strict`, `fromBlock`, `toBlock`\>
-
-[GetFilterLogsParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`GetFilterLogsParameters`](https://viem.sh/docs/index.html)\<`abi`, `eventName`, `strict`, `fromBlock`, `toBlock`\> | [GetFilterLogsParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -1726,33 +1390,19 @@ Returns a list of event logs matching the provided parameters.
 
 #### Type Parameters
 
-##### abiEvent
-
-`abiEvent` *extends* `AbiEvent` \| `undefined` = `undefined`
-
-##### abiEvents
-
-`abiEvents` *extends* readonly `unknown`[] \| readonly `AbiEvent`[] \| `undefined` = `abiEvent` *extends* `AbiEvent` ? \[`abiEvent`\<`abiEvent`\>\] : `undefined`
-
-##### strict
-
-`strict` *extends* `boolean` \| `undefined` = `undefined`
-
-##### fromBlock
-
-`fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
-
-##### toBlock
-
-`toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `abiEvent` *extends* `AbiEvent` \| `undefined` | `undefined` |
+| `abiEvents` *extends* readonly `unknown`[] \| readonly `AbiEvent`[] \| `undefined` | `abiEvent` *extends* `AbiEvent` ? \[`abiEvent`\<`abiEvent`\>\] : `undefined` |
+| `strict` *extends* `boolean` \| `undefined` | `undefined` |
+| `fromBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
+| `toBlock` *extends* `bigint` \| [`BlockTag`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args?
-
-[`GetLogsParameters`](https://viem.sh/docs/index.html)\<`abiEvent`, `abiEvents`, `strict`, `fromBlock`, `toBlock`\>
-
-[GetLogsParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args?` | [`GetLogsParameters`](https://viem.sh/docs/index.html)\<`abiEvent`, `abiEvents`, `strict`, `fromBlock`, `toBlock`\> | [GetLogsParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -1785,9 +1435,9 @@ Returns the account and storage values of the specified account including the Me
 
 #### Parameters
 
-##### args
-
-[`GetProofParameters`](https://viem.sh/docs/index.html)
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`GetProofParameters`](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -1822,11 +1472,9 @@ Returns the value from a storage slot at a given address.
 
 #### Parameters
 
-##### args
-
-[`GetStorageAtParameters`](https://viem.sh/docs/index.html)
-
-[GetStorageAtParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`GetStorageAtParameters`](https://viem.sh/docs/index.html) | [GetStorageAtParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -1863,17 +1511,15 @@ Returns information about a [Transaction](https://viem.sh/docs/glossary/terms#tr
 
 #### Type Parameters
 
-##### blockTag
-
-`blockTag` *extends* [`BlockTag`](https://viem.sh/docs/index.html) = `"latest"`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `blockTag` *extends* [`BlockTag`](https://viem.sh/docs/index.html) | `"latest"` |
 
 #### Parameters
 
-##### args
-
-[`GetTransactionParameters`](https://viem.sh/docs/index.html)\<`blockTag`\>
-
-[GetTransactionParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`GetTransactionParameters`](https://viem.sh/docs/index.html)\<`blockTag`\> | [GetTransactionParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -1908,11 +1554,9 @@ Returns the number of blocks passed (confirmations) since the transaction was pr
 
 #### Parameters
 
-##### args
-
-[`GetTransactionConfirmationsParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`\>
-
-[GetTransactionConfirmationsParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`GetTransactionConfirmationsParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`\> | [GetTransactionConfirmationsParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -1946,11 +1590,9 @@ Returns the number of [Transactions](https://viem.sh/docs/glossary/terms#transac
 
 #### Parameters
 
-##### args
-
-[`GetTransactionCountParameters`](https://viem.sh/docs/index.html)
-
-[GetTransactionCountParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`GetTransactionCountParameters`](https://viem.sh/docs/index.html) | [GetTransactionCountParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -1985,11 +1627,9 @@ Returns the [Transaction Receipt](https://viem.sh/docs/glossary/terms#transactio
 
 #### Parameters
 
-##### args
-
-[`GetTransactionReceiptParameters`](https://viem.sh/docs/index.html)
-
-[GetTransactionReceiptParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`GetTransactionReceiptParameters`](https://viem.sh/docs/index.html) | [GetTransactionReceiptParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2028,21 +1668,16 @@ Similar to [`readContract`](https://viem.sh/docs/contract/readContract), but bat
 
 #### Type Parameters
 
-##### contracts
-
-`contracts` *extends* readonly `unknown`[]
-
-##### allowFailure
-
-`allowFailure` *extends* `boolean` = `true`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `contracts` *extends* readonly `unknown`[] | - |
+| `allowFailure` *extends* `boolean` | `true` |
 
 #### Parameters
 
-##### args
-
-[`MulticallParameters`](https://viem.sh/docs/index.html)\<`contracts`, `allowFailure`\>
-
-[MulticallParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`MulticallParameters`](https://viem.sh/docs/index.html)\<`contracts`, `allowFailure`\> | [MulticallParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2104,25 +1739,17 @@ Prepares a transaction request for signing.
 
 #### Type Parameters
 
-##### request
-
-`request` *extends* [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: `undefined`; `authorizationList?`: `undefined`; `blobs?`: `undefined`; `blobVersionedHashes?`: `undefined`; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `bigint`; `kzg?`: `undefined`; `maxFeePerBlobGas?`: `undefined`; `maxFeePerGas?`: `undefined`; `maxPriorityFeePerGas?`: `undefined`; `nonce?`: `number`; `sidecars?`: `undefined`; `to?`: `` `0x${string}` `` \| `null`; `type?`: `"legacy"`; `value?`: `bigint`; \}, `"from"`\> \| [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: [`AccessList`](https://viem.sh/docs/index.html); `authorizationList?`: `undefined`; `blobs?`: `undefined`; `blobVersionedHashes?`: `undefined`; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `bigint`; `kzg?`: `undefined`; `maxFeePerBlobGas?`: `undefined`; `maxFeePerGas?`: `undefined`; `maxPriorityFeePerGas?`: `undefined`; `nonce?`: `number`; `sidecars?`: `undefined`; `to?`: `` `0x${string}` `` \| `null`; `type?`: `"eip2930"`; `value?`: `bigint`; \}, `"from"`\> \| [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: [`AccessList`](https://viem.sh/docs/index.html); `authorizationList?`: `undefined`; `blobs?`: `undefined`; `blobVersionedHashes?`: `undefined`; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `undefined`; `kzg?`: `undefined`; `maxFeePerBlobGas?`: `undefined`; `maxFeePerGas?`: `bigint`; `maxPriorityFeePerGas?`: `bigint`; `nonce?`: `number`; `sidecars?`: `undefined`; `to?`: `` `0x${string}` `` \| `null`; `type?`: `"eip1559"`; `value?`: `bigint`; \}, `"from"`\> \| [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: [`AccessList`](https://viem.sh/docs/index.html); `authorizationList?`: `undefined`; `blobs?`: readonly `` `0x${string}` ``[] \| readonly `Uint8Array`[]; `blobVersionedHashes`: readonly `` `0x${string}` ``[]; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `undefined`; `kzg?`: `undefined`; `maxFeePerBlobGas?`: `bigint`; `maxFeePerGas?`: `bigint`; `maxPriorityFeePerGas?`: `bigint`; `nonce?`: `number`; `sidecars?`: readonly [`BlobSidecar`](https://viem.sh/docs/index.html)\<`` `0x${string}` ``\>[]; `to`: `` `0x${string}` `` \| `null`; `type?`: `"eip4844"`; `value?`: `bigint`; \}, `"from"`\> \| [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: [`AccessList`](https://viem.sh/docs/index.html); `authorizationList?`: `undefined`; `blobs`: readonly `` `0x${string}` ``[] \| readonly `Uint8Array`[]; `blobVersionedHashes?`: readonly `` `0x${string}` ``[]; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `undefined`; `kzg?`: [`Kzg`](https://viem.sh/docs/index.html); `maxFeePerBlobGas?`: `bigint`; `maxFeePerGas?`: `bigint`; `maxPriorityFeePerGas?`: `bigint`; `nonce?`: `number`; `sidecars?`: readonly [`BlobSidecar`](https://viem.sh/docs/index.html)\<`` `0x${string}` ``\>[]; `to`: `` `0x${string}` `` \| `null`; `type?`: `"eip4844"`; `value?`: `bigint`; \}, `"from"`\> \| [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: [`AccessList`](https://viem.sh/docs/index.html); `authorizationList?`: [`AuthorizationList`](https://viem.sh/docs/index.html)\<`number`, `boolean`\>; `blobs?`: `undefined`; `blobVersionedHashes?`: `undefined`; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `undefined`; `kzg?`: `undefined`; `maxFeePerBlobGas?`: `undefined`; `maxFeePerGas?`: `bigint`; `maxPriorityFeePerGas?`: `bigint`; `nonce?`: `number`; `sidecars?`: `undefined`; `to?`: `` `0x${string}` `` \| `null`; `type?`: `"eip7702"`; `value?`: `bigint`; \}, `"from"`\> & `object` & `object`
-
-##### chainOverride
-
-`chainOverride` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
-
-##### accountOverride
-
-`accountOverride` *extends* `` `0x${string}` `` \| [`Account`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `request` *extends* [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: `undefined`; `authorizationList?`: `undefined`; `blobs?`: `undefined`; `blobVersionedHashes?`: `undefined`; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `bigint`; `kzg?`: `undefined`; `maxFeePerBlobGas?`: `undefined`; `maxFeePerGas?`: `undefined`; `maxPriorityFeePerGas?`: `undefined`; `nonce?`: `number`; `sidecars?`: `undefined`; `to?`: `` `0x${string}` `` \| `null`; `type?`: `"legacy"`; `value?`: `bigint`; \}, `"from"`\> \| [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: [`AccessList`](https://viem.sh/docs/index.html); `authorizationList?`: `undefined`; `blobs?`: `undefined`; `blobVersionedHashes?`: `undefined`; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `bigint`; `kzg?`: `undefined`; `maxFeePerBlobGas?`: `undefined`; `maxFeePerGas?`: `undefined`; `maxPriorityFeePerGas?`: `undefined`; `nonce?`: `number`; `sidecars?`: `undefined`; `to?`: `` `0x${string}` `` \| `null`; `type?`: `"eip2930"`; `value?`: `bigint`; \}, `"from"`\> \| [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: [`AccessList`](https://viem.sh/docs/index.html); `authorizationList?`: `undefined`; `blobs?`: `undefined`; `blobVersionedHashes?`: `undefined`; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `undefined`; `kzg?`: `undefined`; `maxFeePerBlobGas?`: `undefined`; `maxFeePerGas?`: `bigint`; `maxPriorityFeePerGas?`: `bigint`; `nonce?`: `number`; `sidecars?`: `undefined`; `to?`: `` `0x${string}` `` \| `null`; `type?`: `"eip1559"`; `value?`: `bigint`; \}, `"from"`\> \| [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: [`AccessList`](https://viem.sh/docs/index.html); `authorizationList?`: `undefined`; `blobs?`: readonly `` `0x${string}` ``[] \| readonly `Uint8Array`[]; `blobVersionedHashes`: readonly `` `0x${string}` ``[]; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `undefined`; `kzg?`: `undefined`; `maxFeePerBlobGas?`: `bigint`; `maxFeePerGas?`: `bigint`; `maxPriorityFeePerGas?`: `bigint`; `nonce?`: `number`; `sidecars?`: readonly [`BlobSidecar`](https://viem.sh/docs/index.html)\<`` `0x${string}` ``\>[]; `to`: `` `0x${string}` `` \| `null`; `type?`: `"eip4844"`; `value?`: `bigint`; \}, `"from"`\> \| [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: [`AccessList`](https://viem.sh/docs/index.html); `authorizationList?`: `undefined`; `blobs`: readonly `` `0x${string}` ``[] \| readonly `Uint8Array`[]; `blobVersionedHashes?`: readonly `` `0x${string}` ``[]; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `undefined`; `kzg?`: [`Kzg`](https://viem.sh/docs/index.html); `maxFeePerBlobGas?`: `bigint`; `maxFeePerGas?`: `bigint`; `maxPriorityFeePerGas?`: `bigint`; `nonce?`: `number`; `sidecars?`: readonly [`BlobSidecar`](https://viem.sh/docs/index.html)\<`` `0x${string}` ``\>[]; `to`: `` `0x${string}` `` \| `null`; `type?`: `"eip4844"`; `value?`: `bigint`; \}, `"from"`\> \| [`Omit`](https://viem.sh/docs/index.html)\<\{ `accessList?`: [`AccessList`](https://viem.sh/docs/index.html); `authorizationList?`: [`AuthorizationList`](https://viem.sh/docs/index.html)\<`number`, `boolean`\>; `blobs?`: `undefined`; `blobVersionedHashes?`: `undefined`; `data?`: `` `0x${string}` ``; `from?`: `` `0x${string}` ``; `gas?`: `bigint`; `gasPrice?`: `undefined`; `kzg?`: `undefined`; `maxFeePerBlobGas?`: `undefined`; `maxFeePerGas?`: `bigint`; `maxPriorityFeePerGas?`: `bigint`; `nonce?`: `number`; `sidecars?`: `undefined`; `to?`: `` `0x${string}` `` \| `null`; `type?`: `"eip7702"`; `value?`: `bigint`; \}, `"from"`\> & `object` & `object` | - |
+| `chainOverride` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
+| `accountOverride` *extends* `` `0x${string}` `` \| [`Account`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args
-
-[`PrepareTransactionRequestParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`, [`Account`](https://viem.sh/docs/index.html) \| `undefined`, `chainOverride`, `accountOverride`, `request`\>
-
-[PrepareTransactionRequestParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`PrepareTransactionRequestParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`, [`Account`](https://viem.sh/docs/index.html) \| `undefined`, `chainOverride`, `accountOverride`, `request`\> | [PrepareTransactionRequestParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2175,25 +1802,17 @@ Calls a read-only function on a contract, and returns the response.
 
 #### Type Parameters
 
-##### abi
-
-`abi` *extends* readonly `unknown`[] \| `Abi`
-
-##### functionName
-
-`functionName` *extends* `string`
-
-##### args
-
-`args` *extends* `unknown`
+| Type Parameter |
+| ------ |
+| `abi` *extends* readonly `unknown`[] \| `Abi` |
+| `functionName` *extends* `string` |
+| `args` *extends* `unknown` |
 
 #### Parameters
 
-##### args
-
-[`ReadContractParameters`](https://viem.sh/docs/index.html)\<`abi`, `functionName`, `args`\>
-
-[ReadContractParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`ReadContractParameters`](https://viem.sh/docs/index.html)\<`abi`, `functionName`, `args`\> | [ReadContractParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2244,9 +1863,9 @@ Sends a **signed** transaction to the network
 
 #### Parameters
 
-##### args
-
-[`SendRawTransactionParameters`](https://viem.sh/docs/index.html)
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`SendRawTransactionParameters`](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2282,9 +1901,9 @@ Sends a **signed** transaction to the network
 
 #### Parameters
 
-##### args
-
-[`SendRawTransactionSyncParameters`](https://viem.sh/docs/index.html)
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`SendRawTransactionSyncParameters`](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2315,15 +1934,15 @@ const receipt = await client.sendRawTransactionSync({
 
 #### Type Parameters
 
-##### calls
-
-`calls` *extends* readonly `unknown`[]
+| Type Parameter |
+| ------ |
+| `calls` *extends* readonly `unknown`[] |
 
 #### Parameters
 
-##### args
-
-[`SimulateBlocksParameters`](https://viem.sh/docs/index.html)\<`calls`\>
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`SimulateBlocksParameters`](https://viem.sh/docs/index.html)\<`calls`\> |
 
 #### Returns
 
@@ -2341,15 +1960,15 @@ Simulates a set of calls on block(s) with optional block and state overrides.
 
 #### Type Parameters
 
-##### calls
-
-`calls` *extends* readonly `unknown`[]
+| Type Parameter |
+| ------ |
+| `calls` *extends* readonly `unknown`[] |
 
 #### Parameters
 
-##### args
-
-[`SimulateBlocksParameters`](https://viem.sh/docs/index.html)\<`calls`\>
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`SimulateBlocksParameters`](https://viem.sh/docs/index.html)\<`calls`\> |
 
 #### Returns
 
@@ -2401,15 +2020,15 @@ Simulates a set of calls.
 
 #### Type Parameters
 
-##### calls
-
-`calls` *extends* readonly `unknown`[]
+| Type Parameter |
+| ------ |
+| `calls` *extends* readonly `unknown`[] |
 
 #### Parameters
 
-##### args
-
-[`SimulateCallsParameters`](https://viem.sh/docs/index.html)\<`calls`\>
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`SimulateCallsParameters`](https://viem.sh/docs/index.html)\<`calls`\> |
 
 #### Returns
 
@@ -2454,33 +2073,19 @@ Simulates/validates a contract interaction. This is useful for retrieving **retu
 
 #### Type Parameters
 
-##### abi
-
-`abi` *extends* readonly `unknown`[] \| `Abi`
-
-##### functionName
-
-`functionName` *extends* `string`
-
-##### args
-
-`args` *extends* `unknown`
-
-##### chainOverride
-
-`chainOverride` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined`
-
-##### accountOverride
-
-`accountOverride` *extends* `` `0x${string}` `` \| [`Account`](https://viem.sh/docs/index.html) \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `abi` *extends* readonly `unknown`[] \| `Abi` | - |
+| `functionName` *extends* `string` | - |
+| `args` *extends* `unknown` | - |
+| `chainOverride` *extends* [`Chain`](https://viem.sh/docs/index.html) \| `undefined` | - |
+| `accountOverride` *extends* `` `0x${string}` `` \| [`Account`](https://viem.sh/docs/index.html) \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args
-
-[`SimulateContractParameters`](https://viem.sh/docs/index.html)\<`abi`, `functionName`, `args`, [`Chain`](https://viem.sh/docs/index.html) \| `undefined`, `chainOverride`, `accountOverride`\>
-
-[SimulateContractParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`SimulateContractParameters`](https://viem.sh/docs/index.html)\<`abi`, `functionName`, `args`, [`Chain`](https://viem.sh/docs/index.html) \| `undefined`, `chainOverride`, `accountOverride`\> | [SimulateContractParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2546,11 +2151,9 @@ Destroys a Filter that was created from one of the following Actions:
 
 #### Parameters
 
-##### args
-
-[`UninstallFilterParameters`](https://viem.sh/docs/index.html)
-
-[UninstallFilterParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`UninstallFilterParameters`](https://viem.sh/docs/index.html) | [UninstallFilterParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2580,9 +2183,9 @@ Verify that a hash was signed by the provided address.
 
 #### Parameters
 
-##### args
-
-[`VerifyHashParameters`](https://viem.sh/docs/index.html)
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`VerifyHashParameters`](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2602,77 +2205,20 @@ Compatible with Smart Contract Accounts & Externally Owned Accounts via [ERC-649
 
 #### Parameters
 
-##### args
-
-###### address
-
-`` `0x${string}` ``
-
-The address that signed the original message.
-
-###### blockNumber?
-
-`bigint`
-
-The balance of the account at a block number.
-
-###### blockTag?
-
-[`BlockTag`](https://viem.sh/docs/index.html)
-
-The balance of the account at a block tag.
-
-**Default**
-
-```ts
-'latest'
-```
-
-###### chain?
-
-[`Chain`](https://viem.sh/docs/index.html) \| `null`
-
-The chain to use.
-
-###### erc6492VerifierAddress?
-
-`` `0x${string}` ``
-
-The address of the ERC-6492 signature verifier contract.
-
-###### factory?
-
-`` `0x${string}` ``
-
-###### factoryData?
-
-`` `0x${string}` ``
-
-###### message
-
-[`SignableMessage`](https://viem.sh/docs/index.html)
-
-The message to be verified.
-
-###### multicallAddress?
-
-`` `0x${string}` ``
-
-Multicall3 address for ERC-8010 verification.
-
-###### signature
-
-`Uint8Array` \| `` `0x${string}` `` \| [`Signature`](https://viem.sh/docs/index.html)
-
-The signature that was generated by signing the message with the address's private key.
-
-###### universalSignatureVerifierAddress?
-
-`` `0x${string}` ``
-
-**Deprecated**
-
-use `erc6492VerifierAddress` instead.
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | \{ `address`: `` `0x${string}` ``; `blockNumber?`: `bigint`; `blockTag?`: [`BlockTag`](https://viem.sh/docs/index.html); `chain?`: [`Chain`](https://viem.sh/docs/index.html) \| `null`; `erc6492VerifierAddress?`: `` `0x${string}` ``; `factory?`: `` `0x${string}` ``; `factoryData?`: `` `0x${string}` ``; `message`: [`SignableMessage`](https://viem.sh/docs/index.html); `multicallAddress?`: `` `0x${string}` ``; `signature`: `Uint8Array` \| `` `0x${string}` `` \| [`Signature`](https://viem.sh/docs/index.html); `universalSignatureVerifierAddress?`: `` `0x${string}` ``; \} | - |
+| `args.address` | `` `0x${string}` `` | The address that signed the original message. |
+| `args.blockNumber?` | `bigint` | The balance of the account at a block number. |
+| `args.blockTag?` | [`BlockTag`](https://viem.sh/docs/index.html) | The balance of the account at a block tag. **Default** `'latest'` |
+| `args.chain?` | [`Chain`](https://viem.sh/docs/index.html) \| `null` | The chain to use. |
+| `args.erc6492VerifierAddress?` | `` `0x${string}` `` | The address of the ERC-6492 signature verifier contract. |
+| `args.factory?` | `` `0x${string}` `` | - |
+| `args.factoryData?` | `` `0x${string}` `` | - |
+| `args.message` | [`SignableMessage`](https://viem.sh/docs/index.html) | The message to be verified. |
+| `args.multicallAddress?` | `` `0x${string}` `` | Multicall3 address for ERC-8010 verification. |
+| `args.signature` | `Uint8Array` \| `` `0x${string}` `` \| [`Signature`](https://viem.sh/docs/index.html) | The signature that was generated by signing the message with the address's private key. |
+| `args.universalSignatureVerifierAddress?` | `` `0x${string}` `` | **Deprecated** use `erc6492VerifierAddress` instead. |
 
 #### Returns
 
@@ -2692,73 +2238,18 @@ Compatible with Smart Contract Accounts & Externally Owned Accounts via [ERC-649
 
 #### Parameters
 
-##### args
-
-###### address?
-
-`` `0x${string}` ``
-
-Ethereum address to check against.
-
-###### blockNumber?
-
-`bigint`
-
-The balance of the account at a block number.
-
-###### blockTag?
-
-[`BlockTag`](https://viem.sh/docs/index.html)
-
-The balance of the account at a block tag.
-
-**Default**
-
-```ts
-'latest'
-```
-
-###### domain?
-
-`string`
-
-[RFC 3986](https://www.rfc-editor.org/rfc/rfc3986) authority to check against.
-
-###### message
-
-`string`
-
-EIP-4361 formatted message.
-
-###### nonce?
-
-`string`
-
-Random string to check against.
-
-###### scheme?
-
-`string`
-
-[RFC 3986](https://www.rfc-editor.org/rfc/rfc3986#section-3.1) URI scheme to check against.
-
-###### signature
-
-`` `0x${string}` ``
-
-Signature to check against.
-
-###### time?
-
-`Date`
-
-Current time to check optional `expirationTime` and `notBefore` fields.
-
-**Default**
-
-```ts
-new Date()
-```
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | \{ `address?`: `` `0x${string}` ``; `blockNumber?`: `bigint`; `blockTag?`: [`BlockTag`](https://viem.sh/docs/index.html); `domain?`: `string`; `message`: `string`; `nonce?`: `string`; `scheme?`: `string`; `signature`: `` `0x${string}` ``; `time?`: `Date`; \} | - |
+| `args.address?` | `` `0x${string}` `` | Ethereum address to check against. |
+| `args.blockNumber?` | `bigint` | The balance of the account at a block number. |
+| `args.blockTag?` | [`BlockTag`](https://viem.sh/docs/index.html) | The balance of the account at a block tag. **Default** `'latest'` |
+| `args.domain?` | `string` | [RFC 3986](https://www.rfc-editor.org/rfc/rfc3986) authority to check against. |
+| `args.message` | `string` | EIP-4361 formatted message. |
+| `args.nonce?` | `string` | Random string to check against. |
+| `args.scheme?` | `string` | [RFC 3986](https://www.rfc-editor.org/rfc/rfc3986#section-3.1) URI scheme to check against. |
+| `args.signature` | `` `0x${string}` `` | Signature to check against. |
+| `args.time?` | `Date` | Current time to check optional `expirationTime` and `notBefore` fields. **Default** `new Date()` |
 
 #### Returns
 
@@ -2776,9 +2267,9 @@ Verify that typed data was signed by the provided address.
 
 #### Parameters
 
-##### args
-
-[`VerifyTypedDataParameters`](https://viem.sh/docs/index.html)
+| Parameter | Type |
+| ------ | ------ |
+| `args` | [`VerifyTypedDataParameters`](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2803,11 +2294,9 @@ Waits for the [Transaction](https://viem.sh/docs/glossary/terms#transaction) to 
 
 #### Parameters
 
-##### args
-
-[`WaitForTransactionReceiptParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`\>
-
-[WaitForTransactionReceiptParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`WaitForTransactionReceiptParameters`](https://viem.sh/docs/index.html)\<[`Chain`](https://viem.sh/docs/index.html) \| `undefined`\> | [WaitForTransactionReceiptParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2856,11 +2345,9 @@ Watches and returns incoming block numbers.
 
 #### Parameters
 
-##### args
-
-[`WatchBlockNumberParameters`](https://viem.sh/docs/index.html)
-
-[WatchBlockNumberParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`WatchBlockNumberParameters`](https://viem.sh/docs/index.html) | [WatchBlockNumberParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2897,21 +2384,16 @@ Watches and returns information for incoming blocks.
 
 #### Type Parameters
 
-##### includeTransactions
-
-`includeTransactions` *extends* `boolean` = `false`
-
-##### blockTag
-
-`blockTag` *extends* [`BlockTag`](https://viem.sh/docs/index.html) = `"latest"`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `includeTransactions` *extends* `boolean` | `false` |
+| `blockTag` *extends* [`BlockTag`](https://viem.sh/docs/index.html) | `"latest"` |
 
 #### Parameters
 
-##### args
-
-[`WatchBlocksParameters`](https://viem.sh/docs/index.html)\<[`Transport`](https://viem.sh/docs/index.html), [`Chain`](https://viem.sh/docs/index.html) \| `undefined`, `includeTransactions`, `blockTag`\>
-
-[WatchBlocksParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`WatchBlocksParameters`](https://viem.sh/docs/index.html)\<[`Transport`](https://viem.sh/docs/index.html), [`Chain`](https://viem.sh/docs/index.html) \| `undefined`, `includeTransactions`, `blockTag`\> | [WatchBlocksParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -2944,25 +2426,17 @@ Watches and returns emitted contract event logs.
 
 #### Type Parameters
 
-##### abi
-
-`abi` *extends* readonly `unknown`[] \| `Abi`
-
-##### eventName
-
-`eventName` *extends* `string`
-
-##### strict
-
-`strict` *extends* `boolean` \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `abi` *extends* readonly `unknown`[] \| `Abi` | - |
+| `eventName` *extends* `string` | - |
+| `strict` *extends* `boolean` \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args
-
-[`WatchContractEventParameters`](https://viem.sh/docs/index.html)\<`abi`, `eventName`, `strict`, [`Transport`](https://viem.sh/docs/index.html)\>
-
-[WatchContractEventParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`WatchContractEventParameters`](https://viem.sh/docs/index.html)\<`abi`, `eventName`, `strict`, [`Transport`](https://viem.sh/docs/index.html)\> | [WatchContractEventParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -3011,25 +2485,17 @@ Watches and returns emitted [Event Logs](https://viem.sh/docs/glossary/terms#eve
 
 #### Type Parameters
 
-##### abiEvent
-
-`abiEvent` *extends* `AbiEvent` \| `undefined` = `undefined`
-
-##### abiEvents
-
-`abiEvents` *extends* readonly `unknown`[] \| readonly `AbiEvent`[] \| `undefined` = `abiEvent` *extends* `AbiEvent` ? \[`abiEvent`\<`abiEvent`\>\] : `undefined`
-
-##### strict
-
-`strict` *extends* `boolean` \| `undefined` = `undefined`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `abiEvent` *extends* `AbiEvent` \| `undefined` | `undefined` |
+| `abiEvents` *extends* readonly `unknown`[] \| readonly `AbiEvent`[] \| `undefined` | `abiEvent` *extends* `AbiEvent` ? \[`abiEvent`\<`abiEvent`\>\] : `undefined` |
+| `strict` *extends* `boolean` \| `undefined` | `undefined` |
 
 #### Parameters
 
-##### args
-
-[`WatchEventParameters`](https://viem.sh/docs/index.html)\<`abiEvent`, `abiEvents`, `strict`, [`Transport`](https://viem.sh/docs/index.html)\>
-
-[WatchEventParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`WatchEventParameters`](https://viem.sh/docs/index.html)\<`abiEvent`, `abiEvents`, `strict`, [`Transport`](https://viem.sh/docs/index.html)\> | [WatchEventParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
@@ -3073,11 +2539,9 @@ Watches and returns pending transaction hashes.
 
 #### Parameters
 
-##### args
-
-[`WatchPendingTransactionsParameters`](https://viem.sh/docs/index.html)\<[`Transport`](https://viem.sh/docs/index.html)\>
-
-[WatchPendingTransactionsParameters](https://viem.sh/docs/index.html)
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `args` | [`WatchPendingTransactionsParameters`](https://viem.sh/docs/index.html)\<[`Transport`](https://viem.sh/docs/index.html)\> | [WatchPendingTransactionsParameters](https://viem.sh/docs/index.html) |
 
 #### Returns
 
