@@ -1,4 +1,4 @@
-Defined in: [packages/community/src/index.ts:34](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L34)
+Defined in: [index.ts:34](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L34)
 
 xPNTs issuance parameters
 
@@ -8,7 +8,7 @@ xPNTs issuance parameters
 
 > **exchangeRate**: `bigint`
 
-Defined in: [packages/community/src/index.ts:37](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L37)
+Defined in: [index.ts:37](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L37)
 
 ***
 
@@ -16,7 +16,7 @@ Defined in: [packages/community/src/index.ts:37](https://github.com/AAStarCommun
 
 > **initialSupply**: `bigint`
 
-Defined in: [packages/community/src/index.ts:36](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L36)
+Defined in: [index.ts:36](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L36)
 
 ***
 
@@ -24,4 +24,4 @@ Defined in: [packages/community/src/index.ts:36](https://github.com/AAStarCommun
 
 > **symbol**: `string`
 
-Defined in: [packages/community/src/index.ts:35](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L35)
+Defined in: [index.ts:35](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L35)

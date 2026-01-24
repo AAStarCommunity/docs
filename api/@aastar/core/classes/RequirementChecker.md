@@ -36,7 +36,7 @@ Defined in: [packages/core/src/requirementChecker.ts:44](https://github.com/AASt
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `publicClient` | `PublicClient` | **`Internal`** |
+| `publicClient` | [`PublicClient`](../interfaces/PublicClient.md) | **`Internal`** |
 | `addresses?` | \{ `apnts?`: `` `0x${string}` ``; `gtoken?`: `` `0x${string}` ``; `mysbt?`: `` `0x${string}` ``; `registry?`: `` `0x${string}` ``; \} | **`Internal`** |
 | `addresses.apnts?` | `` `0x${string}` `` | - |
 | `addresses.gtoken?` | `` `0x${string}` `` | - |

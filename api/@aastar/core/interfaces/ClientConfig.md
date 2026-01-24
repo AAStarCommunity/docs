@@ -11,7 +11,7 @@ Base configuration for all L2 Business Clients
 
 ### client
 
-> **client**: `WalletClient`
+> **client**: [`WalletClient`](WalletClient.md)
 
 Defined in: [packages/core/src/clients/types.ts:12](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/core/src/clients/types.ts#L12)
 
@@ -71,7 +71,7 @@ Required for deploying new PaymasterV4 instances.
 
 ### publicClient?
 
-> `optional` **publicClient**: `PublicClient`
+> `optional` **publicClient**: [`PublicClient`](PublicClient.md)
 
 Defined in: [packages/core/src/clients/types.ts:20](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/core/src/clients/types.ts#L20)
 

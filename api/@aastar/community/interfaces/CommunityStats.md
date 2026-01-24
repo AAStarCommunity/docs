@@ -1,4 +1,4 @@
-Defined in: [packages/community/src/index.ts:43](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L43)
+Defined in: [index.ts:43](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L43)
 
 Community statistics
 
@@ -8,7 +8,7 @@ Community statistics
 
 > **reputationAvg**: `number`
 
-Defined in: [packages/community/src/index.ts:47](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L47)
+Defined in: [index.ts:47](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L47)
 
 ***
 
@@ -16,7 +16,7 @@ Defined in: [packages/community/src/index.ts:47](https://github.com/AAStarCommun
 
 > **totalMembers**: `number`
 
-Defined in: [packages/community/src/index.ts:44](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L44)
+Defined in: [index.ts:44](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L44)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/community/src/index.ts:44](https://github.com/AAStarCommun
 
 > **totalStaked**: `bigint`
 
-Defined in: [packages/community/src/index.ts:45](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L45)
+Defined in: [index.ts:45](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L45)
 
 ***
 
@@ -32,4 +32,4 @@ Defined in: [packages/community/src/index.ts:45](https://github.com/AAStarCommun
 
 > **xpntsSupply**: `bigint`
 
-Defined in: [packages/community/src/index.ts:46](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L46)
+Defined in: [index.ts:46](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L46)

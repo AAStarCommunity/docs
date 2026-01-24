@@ -1,4 +1,4 @@
-Defined in: [packages/community/src/index.ts:11](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L11)
+Defined in: [index.ts:11](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L11)
 
 Community configuration for launch
 
@@ -8,7 +8,7 @@ Community configuration for launch
 
 > `optional` **description**: `string`
 
-Defined in: [packages/community/src/index.ts:15](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L15)
+Defined in: [index.ts:15](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L15)
 
 ***
 
@@ -16,7 +16,7 @@ Defined in: [packages/community/src/index.ts:15](https://github.com/AAStarCommun
 
 > `optional` **ensName**: `string`
 
-Defined in: [packages/community/src/index.ts:13](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L13)
+Defined in: [index.ts:13](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L13)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/community/src/index.ts:13](https://github.com/AAStarCommun
 
 > `optional` **entryBurn**: `bigint`
 
-Defined in: [packages/community/src/index.ts:18](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L18)
+Defined in: [index.ts:18](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L18)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [packages/community/src/index.ts:18](https://github.com/AAStarCommun
 
 > `optional` **logoURI**: `string`
 
-Defined in: [packages/community/src/index.ts:16](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L16)
+Defined in: [index.ts:16](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L16)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [packages/community/src/index.ts:16](https://github.com/AAStarCommun
 
 > **name**: `string`
 
-Defined in: [packages/community/src/index.ts:12](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L12)
+Defined in: [index.ts:12](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L12)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [packages/community/src/index.ts:12](https://github.com/AAStarCommun
 
 > `optional` **sbtRules**: [`SBTRuleConfig`](SBTRuleConfig.md)
 
-Defined in: [packages/community/src/index.ts:19](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L19)
+Defined in: [index.ts:19](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L19)
 
 ***
 
@@ -56,7 +56,7 @@ Defined in: [packages/community/src/index.ts:19](https://github.com/AAStarCommun
 
 > **stakeAmount**: `bigint`
 
-Defined in: [packages/community/src/index.ts:17](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L17)
+Defined in: [index.ts:17](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L17)
 
 ***
 
@@ -64,4 +64,4 @@ Defined in: [packages/community/src/index.ts:17](https://github.com/AAStarCommun
 
 > `optional` **website**: `string`
 
-Defined in: [packages/community/src/index.ts:14](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L14)
+Defined in: [index.ts:14](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/community/src/index.ts#L14)

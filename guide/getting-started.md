@@ -1,226 +1,171 @@
-# AAStar SDK (Mycelium Network)
+# AAstar SDK
 
-<p align="left">
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="display:inline-block; margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/TypeScript-5.0-blue" alt="TypeScript" style="display:inline-block; margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/Status-0.14.0-green" alt="Status" style="display:inline-block;" />
-</p>
+The ultimate TypeScript SDK for the AAstar Protocol - a decentralized, community-driven Account Abstraction ecosystem.  
+AAstar 协议的终极 TypeScript SDK —— 构建去中心化、社区驱动的账户抽象生态系统。
 
-**Comprehensive Account Abstraction Infrastructure SDK - Powering the Mycelium Network**
-
----
-**
-## 📚 Contents
-
-- [AAStar SDK (Mycelium Network)](#aastar-sdk-mycelium-network)
-  - [📚 Contents](#-contents)
-  - [Introduction](#introduction)
-    - [Core Features](#core-features)
-  - [Verified Contracts (Current Deployment)](#verified-contracts-current-deployment)
-- [SDK v2 Architecture](#sdk-v2-architecture)
-  - [Installation](#installation)
-  - [Quick Start](#quick-start)
-    - [End User Gasless Transaction](#end-user-gasless-transaction)
-    - [Operator Onboarding](#operator-onboarding)
-  - [Testing Commands](#testing-commands)
-    - [SDK Regression (Using SDK Clients)](#sdk-regression-using-sdk-clients)
-    - [Full Protocol Regression (Anvil Dedicated)](#full-protocol-regression-anvil-dedicated)
-  - [Development Guides](#development-guides)
-    - [ABI Maintenance](#abi-maintenance)
-  - [Development Workflow](#development-workflow)
-    - [Step 1: Modify Contracts](#step-1-modify-contracts)
-    - [Step 2: Local Build \& Deploy (Anvil)](#step-2-local-build--deploy-anvil)
-    - [Step 3: Run Local Tests](#step-3-run-local-tests)
-    - [Step 4: Deploy to Sepolia](#step-4-deploy-to-sepolia)
-    - [Step 5: Verify on Sepolia](#step-5-verify-on-sepolia)
-  - [📊 Gas Analytics \& Reporting](#-gas-analytics--reporting)
-    - [Quick Start](#quick-start-1)
-    - [Key Features](#key-features)
-  - [Academic Research](#academic-research)
-  - [Support](#support)
----
-
-## Introduction
-
-**AAStar SDK** is a high-integration toolkit for the Mycelium network. We've refactored 17 fragmented modules into 7 professional core packages, providing a unified, high-performance, and easy-to-maintain development experience.
-
-### Core Features
-
-- ✅ **Role-Based Clients**: Specific APIs for End Users, Communities, Operators, and Admins.
-- ✅ **Infrastructure Ready**: Deep integration with SuperPaymaster and EOA Bridge.
-- ✅ **Seamless User Experience**: Gasless transactions via community credit system.
-- ✅ **DVT Security Module**: Decentralized verification and aggregate signatures.
-- ✅ **Scientific Reproducibility**: Version-locked for academic research.
+[![npm version](https://img.shields.io/npm/v/@aastar/sdk.svg)](https://www.npmjs.com/package/@aastar/sdk)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## SDK v2 Architecture
+## 🌟 Introduction | 简介
 
-AAStar SDK v2 adopts the **"Actions-Decorator"** pattern. It decouples low-level contract interactions from high-level business logic, providing specialized Client wrappers for the four roles in the ecosystem.
+AAstar SDK provides a complete suite of tools to interact with the AAstar Protocol. It is designed with a **"Pre-check first, Action second"** philosophy, helping developers build robust dApps with minimal errors.
 
-| Client | Targeted Developer | Core Responsibility |
-| :--- | :--- | :--- |
-| **`EndUserClient`** | dApp Developer | Gasless UX, Smart Account management, Credit queries |
-| **`CommunityClient`** | Community/DAO Admin | Auto-onboarding, xPNTs deployment, SBT & Reputation |
-| **`OperatorClient`** | Node/Operator | SuperPaymaster registration, Staking, Pool management |
-| **`AdminClient`** | Protocol Admin | DVT aggregations, Slashing, Global parameters |
+AAstar SDK 提供了一套完整的工具集用于交互 AAstar 协议。它采用了 **"先检查，后执行"** 的设计理念，帮助开发者构建低错误率、健壮的去中心化应用。
+
+### Core Modules | 核心模块
+
+- **`@aastar/community`**: Launch & manage DAOs. (启动和管理 DAO)
+- **`@aastar/operator`**: Run Paymasters & earn rewards. (运行 Paymaster 并赚取收益)
+- **`@aastar/enduser`**: Join communities & enjoy gasless txs. (加入社区并享受免 Gas 交易)
+- **`@aastar/analytics`**: Monitor ecosystem data. (监控生态系统数据)
+- **`@aastar/tokens`**: GToken & XPNTs finance tools. (GToken 和 XPNTs 金融工具)
+- **`@aastar/identity`**: Reputation & SBT management. (声誉和 SBT 管理)
+- **`@aastar/account`**: Smart Account (ERC-4337) utilities. (智能账户工具)
 
 ---
 
-## Installation
+## 📦 Installation | 安装
 
 ```bash
-pnpm install @aastar/sdk @aastar/core viem
+pnpm add @aastar/sdk viem
+# or
+npm install @aastar/sdk viem
 ```
 
 ---
 
-## Quick Start
+## 🚀 Usage | 使用指南
 
-### End User Gasless Transaction
+### 1. Initialize Client | 初始化客户端
+
 ```typescript
-import { createEndUserClient } from '@aastar/sdk';
+import { createPublicClient, createWalletClient, http } from 'viem';
+import { sepolia } from 'viem/chains';
+import { CommunityClient, OperatorClient } from '@aastar/sdk';
 
-const user = createEndUserClient({ 
-  account, 
-  paymasterUrl: 'https://paymaster.aastar.io' 
-});
+// 1. Setup VIEM clients
+const publicClient = createPublicClient({ chain: sepolia, transport: http() });
+const walletClient = createWalletClient({ chain: sepolia, transport: http() });
 
-// Execute gasless via SuperPaymaster
-await user.executeGasless({
-  target: TARGET_ADDR,
-  data: CALL_DATA,
-  operator: OPERATOR_ADDR // Operator sponsoring the gas
-});
+// 2. Initialize AAstar Clients
+const communityClient = new CommunityClient(publicClient, walletClient);
+const operatorClient = new OperatorClient(publicClient, walletClient);
 ```
 
-### Operator Onboarding
+### 2. "Pre-check" Pattern | "预检查" 模式
+
+Avoid reverts and save gas by checking requirements off-chain first.  
+通过链下预检查避免交易回滚并节省 Gas。
+
 ```typescript
-import { createOperatorClient } from '@aastar/sdk';
-import { parseEther, keccak256, stringToBytes } from 'viem';
+// ❌ Old Way (Prone to errors)
+// await communityClient.launchCommunity(...); 
 
-const operator = createOperatorClient({ account, chain });
+// ✅ New AAstar Way
+const check = await communityClient.checkLaunchRequirements(myAddress, parseEther("33"));
 
-// High-level setup: handles GToken approval, staking, and paymaster deposit
-await operator.onboardOperator({
-  stakeAmount: parseEther('100'),
-  depositAmount: parseEther('10'),
-  roleId: keccak256(stringToBytes('PAYMASTER_SUPER'))
+if (!check.hasEnoughGToken) {
+    console.error(`Missing Requirements: ${check.missingRequirements.join(', ')}`);
+    // Output: "Need 33 GT, have 10 GT"
+} else {
+    // Safe to execute
+    await communityClient.launchCommunity({
+        name: "My DAO",
+        tokenSymbol: "MDAO"
+    });
+}
+```
+
+### 3. Key Scenarios | 核心场景
+
+#### 🏛️ For Community Owners (社区创建者)
+
+```typescript
+// Configure SBT rules for your community
+await communityClient.configureSBTRules({
+    communityId: myCommunityId,
+    rule: {
+        minScore: 100,
+        requiredTags: ["OG"]
+    }
 });
 ```
 
----
+#### ⚙️ For Operators (运营商)
 
-## Testing Commands
+```typescript
+// Check if you are ready to be a Super Paymaster
+const status = await operatorClient.checkResources(myAddress);
 
-### SDK Regression (Using SDK Clients)
-```bash
-pnpm run test:full_sdk
+if (status.hasRole) {
+    await operatorClient.withdrawCollateral(parseEther("50"));
+} else {
+    console.log(status.recommendations); 
+    // "Fund aPNTs for collateral", "Stake GToken"
+}
 ```
 
+#### 📊 For Analysts (分析师)
 
-### Full Protocol Regression (Anvil Dedicated)
-```bash
-pnpm run test:full_anvil
+```typescript
+import { AnalyticsClient } from '@aastar/sdk';
+
+const analytics = new AnalyticsClient(publicClient);
+
+// Get real-time GToken metrics
+const metrics = await analytics.getSupplyMetrics();
+console.log(`Deflation Rate: ${metrics.deflationRate}%`);
 ```
-
----
-
-## Development Guides
-
-### ABI Maintenance
-- [ABI Maintenance Plan](https://docs.aastar.io/guide/ABI_MAINTENANCE_PLAN)
-
----
-
-## Development Workflow
-
-A step-by-step guide for contributors from contract modification to Sepolia deployment.
-
-### Step 1: Modify Contracts
-Edit Solidity files in `superpaymaster/contracts/src`.
-```bash
-cd projects/SuperPaymaster
-# Edit .sol files...
-```
-
-### Step 2: Local Build & Deploy (Anvil)
-Auto-start Anvil, compile contracts, deploy, and sync config to SDK.
-```bash
-cd projects/aastar-sdk
-# Runs Anvil + Deploy + Sync .env.anvil
-./run_full_regression.sh --env anvil
-```
-
-### Step 3: Run Local Tests
-Validate your changes with the full regression suite.
-```bash
-# Run all SDK & Protocol tests
-./run_sdk_regression.sh
-```
-
-### Step 4: Deploy to Sepolia
-1. Configure `aastar-sdk/.env.sepolia` with `ADMIN_KEY` and `SEPOLIA_RPC_URL`.
-2. Run the deployment script (with resume capability).
-```bash
-cd projects/SuperPaymaster/contracts
-# Deploy Core + Modules
-export $(grep -v '^#' ../../aastar-sdk/.env.sepolia | xargs) && \
-export PRIVATE_KEY=$ADMIN_KEY && \
-forge script script/DeployV3FullSepolia.s.sol \
-  --rpc-url $SEPOLIA_RPC_URL \
-  --broadcast --verify --slow --resume
-```
-3. Update `aastar-sdk/.env.sepolia` with new contract addresses from `script/v3/config.json`.
-
-### Step 5: Verify on Sepolia
-Run the regression suite against the live testnet.
-```bash
-cd projects/aastar-sdk
-./run_full_regression.sh --env sepolia
-```
-
 
 ---
 
-## 📊 Gas Analytics & Reporting
+## 🔧 Architecture | 架构
+
+AAstar SDK is built on top of **viem**, ensuring lightweight and type-safe interactions. It abstracts complex contract logic into intuitive business primitives.
+
+AAstar SDK 基于 **viem** 构建，确保轻量级和类型安全的交互。它将复杂的合约逻辑抽象为直观的业务原语。
+
+| Package | Functionality (功能) |
+|---------|---------------------|
+| `@aastar/core` | Shared logic, Roles, RequirementChecker |
+| `@aastar/community` | DAO Registry, XPNTs issuance |
+| `@aastar/operator` | Paymaster ops, Staking management |
+| `@aastar/enduser` | User onboarding, SBT minting |
+| `@aastar/tokens` | Finance, Tokenomics, Approval flows |
+| `@aastar/identity` | Reputation, Credit limits, ZK Proofs |
+
+---
+
+## 📊 Gas Analytics & Reporting | Gas 分析与报表
 The SDK includes a powerful **Gas Analytics Module** for analyzing Paymaster efficiency, tracking costs, and generating industry comparison reports.
+SDK 包含一个强大的 **Gas 分析模块**，用于分析 Paymaster 效率、追踪成本并生成行业对比报告。
 
-### Quick Start
+### Quick Start | 快速开始
 Generate a real-time analysis of recent Sepolia transactions:
+生成最近 Sepolia 交易的实时分析：
 ```bash
 npx tsx packages/analytics/src/gas-analyzer-v4.ts
 ```
 
-### Key Features
-- **Double-Layer Analysis**: Intrinsic EVM Efficiency vs. Economic USD Costs
-- **Industry Benchmarking**: Compare AAStar vs. Optimism, Alchemy, Pimlico
-- **Profit Tracking**: Transparent breakdown of Protocol Revenue & Profit
-- **L2 Simulation**: Estimate savings for migrating UserOps to Optimism
+### Key Features | 核心功能
+- **Double-Layer Analysis (双层分析)**: Intrinsic EVM Efficiency vs. Economic USD Costs
+- **Industry Benchmarking (行业对标)**: Compare AAStar vs. Optimism, Alchemy, Pimlico
+- **Profit Tracking (利润追踪)**: Transparent breakdown of Protocol Revenue & Profit
+- **L2 Simulation (L2 模拟)**: Estimate savings for migrating UserOps to Optimism
 
-👉 **[View Full Analytics Documentation](./packages/analytics/README.md)**
-
----
-
-## Academic Research
-
-The SDK supports doctoral data collection for the SuperPaymaster paper. Official experiment logger is available at `scripts/19_sdk_experiment_runner.ts`.
-
-- [Stage 3 Scenario Experiment Plan](https://docs.aastar.io/guide/STAGE_3_SCENARIO_EXP_PLAN)
-- [Reputation-to-Credit Mapping Whitepaper](https://docs.aastar.io/guide/Reputation-to-Credit_Mapping_Whitepaper)
+👉 **[View Full Analytics Documentation | 查看完整分析文档](./packages/analytics/README.md)**
 
 ---
 
-## Support
+## 🤝 Contributing | 贡献
 
-- **Documentation**: [docs.aastar.io](https://docs.aastar.io)
-- **GitHub**: [AAStarCommunity/aastar-sdk](https://github.com/AAStarCommunity/aastar-sdk)
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.  
+欢迎贡献！更多详情请参考 [贡献指南](CONTRIBUTING.md)。
 
-MIT © AAStar Community
+---
 
-## Verified Contracts (Current Deployment)
-
-The following contract addresses have been successfully verified on their respective testnets as of January 24, 2026.
-
-- [Sepolia Verified Contracts](./docs/verify.sepolia.contracts.md)
-- [Optimism Sepolia Verified Contracts](./docs/verify.op-sepolia.contracts.md)
+<p align="center">
+  Built with ❤️ by the AAstar Community
+</p>

@@ -27,7 +27,7 @@ Defined in: [packages/core/src/clients/BaseClient.ts:14](https://github.com/AASt
 
 ### client
 
-> **client**: `WalletClient`
+> **client**: [`WalletClient`](../interfaces/WalletClient.md)
 
 Defined in: [packages/core/src/clients/BaseClient.ts:6](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/core/src/clients/BaseClient.ts#L6)
 
@@ -67,7 +67,7 @@ Defined in: [packages/core/src/clients/BaseClient.ts:11](https://github.com/AASt
 
 ### publicClient?
 
-> `optional` **publicClient**: `PublicClient`
+> `optional` **publicClient**: [`PublicClient`](../interfaces/PublicClient.md)
 
 Defined in: [packages/core/src/clients/BaseClient.ts:7](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/core/src/clients/BaseClient.ts#L7)
 
@@ -97,7 +97,7 @@ Get the account address of the connected wallet
 
 ### getStartPublicClient()
 
-> **getStartPublicClient**(): `PublicClient` \| `WalletClient`\<[`Transport`](https://viem.sh/docs/index.html), [`Chain`](https://viem.sh/docs/index.html) \| `undefined`, [`Account`](https://viem.sh/docs/index.html) \| `undefined`\>
+> **getStartPublicClient**(): [`PublicClient`](../interfaces/PublicClient.md) \| [`WalletClient`](../interfaces/WalletClient.md)\<[`Transport`](https://viem.sh/docs/index.html), [`Chain`](https://viem.sh/docs/index.html) \| `undefined`, [`Account`](https://viem.sh/docs/index.html) \| `undefined`\>
 
 Defined in: [packages/core/src/clients/BaseClient.ts:41](https://github.com/AAStarCommunity/aastar-sdk/blob/7f5ed5aca89613e9b5624bea21ce22cf3df12963/packages/core/src/clients/BaseClient.ts#L41)
 
@@ -105,7 +105,7 @@ Helper to ensure public client exists or fallback to wallet client (if it suppor
 
 #### Returns
 
-`PublicClient` \| `WalletClient`\<[`Transport`](https://viem.sh/docs/index.html), [`Chain`](https://viem.sh/docs/index.html) \| `undefined`, [`Account`](https://viem.sh/docs/index.html) \| `undefined`\>
+[`PublicClient`](../interfaces/PublicClient.md) \| [`WalletClient`](../interfaces/WalletClient.md)\<[`Transport`](https://viem.sh/docs/index.html), [`Chain`](https://viem.sh/docs/index.html) \| `undefined`, [`Account`](https://viem.sh/docs/index.html) \| `undefined`\>
 
 ***
 
