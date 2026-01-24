@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.16.14] - 2026-01-24
+
+### 🌍 Multi-Chain & Infrastructure
+- **[FEATURE]** **Standardized Config Loader**: 
+  - Restructured `config.ts` to implement a robust multi-chain loading priority.
+  - Internal Protocol Contracts (Registry, Paymasters, GToken) now strictly prioritize `config.{network}.json`.
+  - Infrastructure Contracts (EntryPoint, PriceFeed) and URLs (RPC, Bundler) are now sourced primarily from `.env.{network}`.
+- **[FIX]** **Hardcoded Dependencies Cleanup**: 
+  - Successfully removed all remaining hardcoded `0x` addresses and `sepolia` string literals across all `tests/` and `examples/` scripts.
+  - Every script now supports the `--network` parameter for dynamic environment switching.
+- **[REPAIR]** **Reputation Activity Metrics**: Corrected the `opName` lookup string in `l4-reputation-tiers.ts` to align with the latest `l4-setup.ts` state files.
+
+### ⚡ Gasless Execution Efficiency
+- **[IMPROVED]** **SuperPaymaster Verification Tuning**: 
+  - Implemented "Dynamic Nominal Gas Tuning" in `SuperPaymasterClient` to optimize `paymasterVerificationGasLimit`.
+  - Resolved "Efficiency too low" (AA30) errors on Alchemy/Optimism-Sepolia by maintaining a strict balance between execution safety and bundler efficiency ratios (>= 0.4).
+
+## [0.16.13] - 2026-01-23
+
+### 🛡️ Security & Stability
+- **[SECURITY]** **Strict Address Resolution**: 
+  - Enforced strict environment variable lookup for third-party contract addresses (`entryPoint`, `simpleAccountFactory`, `priceFeed`) on non-Anvil networks.
+  - Eliminated fallback to outdated `config.json` files to prevent deployment misconfigurations.
+- **[SECURITY]** **Token Transfer Limits**:
+  - Updated ABI to reflect new `MAX_SINGLE_TX_LIMIT` enforcement in `xPNTsToken`. SDK transactions respecting standard limits will continue to work; anomalous high-value transfers may now revert at the contract level.
+- **[SECURITY]** **Operator Firewall**:
+  - Updated ABI to reflect `autoApprovedSpenders` logic. 
+
+### ⚙️ Core Improvements
+- **[FIX]** **xPNTsToken Initialization**: Adjusted factory logic to support EIP-1167 Minimal Clones using `initialize()` pattern.
+- **[SYNC]** **Contract ABIs**: Synchronized all ABIs with `SuperPaymaster` `v3.6.3`, including new governance functions `renounceFactory` and `emergencyRevokePaymaster`.
+
+
 ## [0.16.11] - 2026-01-19
 
 ### 📊 Gas Analytics & Reporting (New Package)
